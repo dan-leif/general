@@ -183,6 +183,23 @@
   }
   .flag b{color:var(--brick);}
 
+  .extend{
+    margin:30px 0 0;
+    padding:18px 20px;
+    background:var(--paper);
+    border-left:4px solid var(--fern);
+  }
+  .extend h2{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--moss);
+    margin:0 0 8px;
+  }
+  .extend p{margin:10px 0 0;font-size:16px;}
+  .extend p:first-of-type{margin-top:0;}
+
   .pin{
     display:inline-block;
     margin-top:10px;
@@ -232,6 +249,17 @@
     display:flex;align-items:center;justify-content:center;
     border:2px solid #fff;
     box-shadow:0 1px 4px rgba(0,0,0,.35);
+  }
+  .map-pin-ghost{
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--mist);
+    color:var(--moss);
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:500;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    border:2px dashed var(--moss);
   }
   .leaflet-popup-content{font-family:"Newsreader",Georgia,serif;font-size:14px;}
 
@@ -341,7 +369,7 @@
 <div class="map-link-bar">
   <a href="https://www.google.com/maps/dir/24.8362622,121.4449815/24.8361276,121.4451832/24.8254431,121.4486529/24.819329,121.453734/24.8177929,121.449818/24.8249472,121.4475639/24.8362622,121.4449815" target="_blank" rel="noopener">↗ Open full route in Google Maps</a>
 </div>
-<p class="caption">One gate, one creek, two waterfalls, one loop back to the bus. Everything past the ticket booth is on foot.</p>
+<p class="caption">One gate, one creek, two waterfalls, one loop back to the bus. Everything past the ticket booth is on foot. The dotted line marks where 東滿步道 keeps climbing, if you want more.</p>
 
 <div class="sec-head">The day</div>
 
@@ -422,6 +450,16 @@
     <span class="en">Bus 807 → Sanxia → Dingpu → Taipei</span>
     <p>807 to 三峽, 45 minutes. Then the 三鶯線 LRT (free through August 31) or bus 705 to 頂埔, then the Bannan Line to Taipei Main. About 2 hours 15 door to door. Uber becomes reliable once you're in Sanxia town.</p>
   </div>
+</div>
+
+<div class="sec-head">Got daylight left?</div>
+
+<div class="extend">
+  <h2>東滿步道 · out-and-back extension</h2>
+  <p>From the self-guiding trail junction, the same trail keeps going — 東滿步道 (the Dongman Trail) runs 7.8 km one-way from here to Dongyanshan, climbing to a ~1,130 m saddle between 北插天山 and 東眼山. You don't need to finish it. Walk up as far as your legs and daylight allow, then turn around and retrace your steps back to Parking Lot 2 — no taxi or shuttle needed, since you end up where you started.</p>
+  <p>Trade the noon 807 for the 15:00 or 17:30 one; confirm the exact time on the board you photographed this morning.</p>
+  <span class="flag"><b>北插天山 itself is a permit-controlled nature reserve</b> (capped at 120 visitors/day) — stay on the marked Dongman Trail and don't detour to the summit without one. This crossing has a history of trail-work closures too, so ask at the visitor center whether it's currently open past the park boundary before you commit to it.</span>
+  <a class="pin" href="https://www.google.com/maps/search/?api=1&query=24.828053,121.428075" target="_blank" rel="noopener">Approximate direction in Maps</a>
 </div>
 
 <div class="sec-head">Worth saying out loud</div>
@@ -516,7 +554,23 @@
     }).addTo(map).bindPopup('<b>' + s.n + '. ' + s.name + '</b>');
   });
 
-  map.fitBounds(L.latLngBounds(loop).pad(0.15));
+  // Dongman Trail continues toward Dongyanshan — shown as an approximate
+  // straight-line bearing only, not a surveyed waypoint. Real trail winds
+  // along the ridge; follow posted signage past this point.
+  const extension = { coord: [24.828053, 121.428075] };
+
+  L.polyline([stops[5].coord, extension.coord], { color: '#4A6B54', weight: 2, opacity: 0.75, dashArray: '2 7' }).addTo(map);
+
+  L.marker(extension.coord, {
+    icon: L.divIcon({
+      className: '',
+      html: '<div class="map-pin-ghost">&rarr;</div>',
+      iconSize: [22, 22],
+      iconAnchor: [11, 11]
+    })
+  }).addTo(map).bindPopup('<b>Toward Dongyanshan</b><br>東滿步道 continues this way to a ~1,130m saddle. Approximate direction only — follow trail signage. Turn back before 北插天山 (permit required).');
+
+  map.fitBounds(L.latLngBounds(loop.concat([extension.coord])).pad(0.15));
 </script>
 
 </body>
