@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <style>
   :root{
     --mist:#EDF1EC;
@@ -197,19 +199,42 @@
 
   /* ---------- map ---------- */
 
-  .map{
-    position:relative;
+  #map{
     width:100%;
-    padding-bottom:64%;
-    background:var(--paper);
+    height:340px;
     border:1px solid var(--rule);
   }
-  .map iframe{
-    position:absolute;
-    top:0;left:0;
-    width:100%;height:100%;
-    border:0;
+  .map-link-bar{
+    text-align:center;
+    padding:9px 0;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-top:none;
   }
+  .map-link-bar a{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--taro);
+    text-decoration:none;
+  }
+  .map-link-bar a:hover,.map-link-bar a:focus{color:var(--cedar);}
+
+  .map-pin{
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--taro);
+    color:#fff;
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:500;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid #fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.35);
+  }
+  .leaflet-popup-content{font-family:"Newsreader",Georgia,serif;font-size:14px;}
+
   .caption{
     font-family:"IBM Plex Mono",monospace;
     font-size:11px;
@@ -310,6 +335,14 @@
   <p>Photograph the 807 bus board at Parking Lot 2 <em>before</em> you walk in. Six departures a day, and there is no phone signal in the valley to check.</p>
 </div>
 
+<div class="sec-head">The route</div>
+
+<div id="map"></div>
+<div class="map-link-bar">
+  <a href="https://www.google.com/maps/dir/24.8362622,121.4449815/24.8361276,121.4451832/24.8254431,121.4486529/24.819329,121.453734/24.8177929,121.449818/24.8249472,121.4475639/24.8362622,121.4449815" target="_blank" rel="noopener">↗ Open full route in Google Maps</a>
+</div>
+<p class="caption">One gate, one creek, two waterfalls, one loop back to the bus. Everything past the ticket booth is on foot.</p>
+
 <div class="sec-head">The day</div>
 
 <div class="route">
@@ -391,13 +424,6 @@
   </div>
 </div>
 
-<div class="sec-head">The valley</div>
-
-<div class="map">
-  <iframe src="https://maps.google.com/maps?q=24.8270,121.4480&z=14&output=embed" loading="lazy" title="Map of Manyueyuan National Forest Recreation Area"></iframe>
-</div>
-<p class="caption">One gate, one creek, two waterfalls. Everything inside the park is on foot — there is no shuttle.</p>
-
 <div class="sec-head">Worth saying out loud</div>
 
 <div class="phrase">
@@ -454,5 +480,44 @@
 </footer>
 
 </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  const stops = [
+    { n: 1, name: "第二停車場 · Parking Lot 2",     coord: [24.8362622, 121.4449815] },
+    { n: 2, name: "售票站 · Ticket Booth",           coord: [24.8361276, 121.4451832] },
+    { n: 3, name: "遊客中心 · Visitor Center",       coord: [24.8254431, 121.4486529] },
+    { n: 4, name: "處女瀑布 · Virgin Falls",          coord: [24.8193290, 121.4537340] },
+    { n: 5, name: "觀瀑亭 · Viewing Pavilion",       coord: [24.8177929, 121.4498180] },
+    { n: 6, name: "自導式步道 · Self-Guiding Trail", coord: [24.8249472, 121.4475639] },
+  ];
+
+  const map = L.map('map', { scrollWheelZoom: false }).setView([24.827, 121.448], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  const loop = stops.map(s => s.coord);
+  loop.push(stops[0].coord);
+
+  L.polyline(loop, { color: '#7E6A8F', weight: 3, opacity: 0.85, dashArray: '6 7' }).addTo(map);
+
+  stops.forEach(s => {
+    L.marker(s.coord, {
+      icon: L.divIcon({
+        className: '',
+        html: '<div class="map-pin">' + s.n + '</div>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13]
+      })
+    }).addTo(map).bindPopup('<b>' + s.n + '. ' + s.name + '</b>');
+  });
+
+  map.fitBounds(L.latLngBounds(loop).pad(0.15));
+</script>
+
 </body>
 </html>
