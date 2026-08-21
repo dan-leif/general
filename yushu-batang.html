@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玉树 Day 1 — Southern Batang Valley Loop</title>
+<style>
+  /* No external requests: system fonts only, everything inline.
+     Page must keep working offline on a phone in rural Qinghai. */
+  :root{
+    --mist:#EDF1EC;
+    --paper:#FFFFFF;
+    --cedar:#1E3A31;
+    --moss:#4A6B54;
+    --fern:#7D9A82;
+    --taro:#7E6A8F;
+    --brick:#A8492A;
+    --rule:#CBD8CB;
+    --serif:Georgia,"Times New Roman","Noto Serif SC","Songti SC","STSong",serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
+    --zh-serif:"Noto Serif SC","Songti SC","STSong",Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--mist);
+    color:var(--cedar);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 72px;}
+
+  /* ---------- masthead ---------- */
+
+  header{padding:56px 0 28px;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--moss);
+  }
+
+  h1{
+    font-family:var(--zh-serif);
+    font-weight:600;
+    font-size:clamp(40px,11vw,62px);
+    line-height:1.02;
+    margin:14px 0 4px;
+    letter-spacing:.02em;
+  }
+
+  .h1-latin{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(21px,5.5vw,28px);
+    color:var(--moss);
+    margin:0 0 22px;
+  }
+
+  .standfirst{font-size:19px;max-width:52ch;margin:0;}
+
+  /* ---------- day nav ---------- */
+
+  .day-nav{
+    display:flex;
+    gap:10px;
+    margin-top:24px;
+  }
+  .day-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 8px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--moss);
+    background:var(--paper);
+    border:1px solid var(--rule);
+  }
+  .day-nav a.here{
+    color:#fff;
+    background:var(--moss);
+    border-color:var(--moss);
+  }
+  .day-nav a:hover,.day-nav a:focus{border-color:var(--cedar);color:var(--cedar);}
+  .day-nav a.here:hover,.day-nav a.here:focus{color:#fff;}
+
+  /* ---------- alert ---------- */
+
+  .alert{
+    margin:30px 0 0;
+    padding:18px 20px;
+    background:var(--paper);
+    border-left:4px solid var(--brick);
+  }
+  .alert h2{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--brick);
+    margin:0 0 8px;
+  }
+  .alert p{margin:0;font-size:16px;}
+  .alert p + p{margin-top:8px;}
+
+  /* ---------- shared section head ---------- */
+
+  .sec-head{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--moss);
+    margin:56px 0 18px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  /* ---------- route diagram ---------- */
+
+  .diagram{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:10px 6px 4px;
+  }
+  .diagram svg{width:100%;height:auto;display:block;}
+
+  .caption{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    margin-top:10px;
+  }
+
+  /* ---------- spine + timeline ---------- */
+
+  .route{position:relative;padding-left:74px;}
+
+  .spine{
+    position:absolute;
+    left:52px;top:8px;bottom:8px;
+    width:3px;
+    background:linear-gradient(180deg,#C9773F 0%,#9E8A4E 18%,var(--fern) 46%,var(--moss) 74%,var(--cedar) 100%);
+    border-radius:2px;
+  }
+
+  .spine-key{
+    position:absolute;
+    left:0;
+    width:44px;
+    text-align:right;
+    font-family:var(--mono);
+    font-size:10px;
+    line-height:1.3;
+    color:var(--moss);
+  }
+  .spine-key.top{top:0;}
+  .spine-key.bot{bottom:0;}
+
+  .stop{position:relative;margin-bottom:38px;}
+
+  .stop::before{
+    content:"";
+    position:absolute;
+    left:-24px;top:9px;
+    width:11px;height:11px;
+    border-radius:50%;
+    background:var(--mist);
+    border:3px solid var(--moss);
+  }
+  .stop.key::before{border-color:var(--taro);background:var(--taro);}
+
+  .time{
+    position:absolute;
+    left:-74px;
+    top:6px;
+    width:44px;
+    text-align:right;
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:500;
+    color:var(--cedar);
+  }
+
+  .zh{
+    font-family:var(--zh-serif);
+    font-weight:600;
+    font-size:23px;
+    line-height:1.25;
+    display:block;
+  }
+  .py{
+    font-style:italic;
+    font-size:15px;
+    color:var(--taro);
+    display:block;
+    margin-top:1px;
+  }
+  .en{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--moss);
+    display:block;
+    margin-top:5px;
+  }
+  .stop p{margin:10px 0 0;font-size:16.5px;}
+
+  .leg{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    display:block;
+    margin-top:6px;
+  }
+
+  .datum{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.08em;
+    padding:1px 7px;
+    border-radius:999px;
+    border:1px solid var(--rule);
+    color:var(--moss);
+    vertical-align:1px;
+  }
+  .datum.wgs{
+    color:var(--brick);
+    border-color:var(--brick);
+  }
+
+  .coords{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--cedar);
+    margin-top:8px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+  }
+
+  .copy{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--taro);
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:6px 11px;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .copy:active{background:var(--mist);}
+  .copy.done{color:var(--paper);background:var(--moss);border-color:var(--moss);}
+
+  .species{
+    margin:10px 0 0;
+    padding:12px 16px;
+    background:var(--paper);
+    border-left:3px solid var(--fern);
+    font-size:15px;
+  }
+  .species b{
+    font-family:var(--mono);
+    font-weight:500;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--moss);
+    display:block;
+    margin-bottom:5px;
+  }
+
+  .flag{
+    display:block;
+    margin-top:10px;
+    padding:10px 14px;
+    background:var(--paper);
+    border-left:3px solid var(--brick);
+    font-size:15px;
+  }
+  .flag b{color:var(--brick);}
+
+  footer{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    line-height:1.9;
+  }
+  footer a{color:var(--taro);text-decoration:none;border-bottom:1px solid var(--rule);}
+  footer a:hover,footer a:focus{color:var(--cedar);border-color:var(--cedar);}
+
+  @media (max-width:520px){
+    body{font-size:16px;}
+    .wrap{padding:0 16px 56px;}
+    .route{padding-left:58px;}
+    .spine{left:40px;}
+    .spine-key{width:32px;}
+    .time{left:-58px;width:34px;font-size:11px;}
+    .zh{font-size:21px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Day 1 · Yushu 玉树 · ~80 km loop · 3,700–3,900 m</div>
+  <h1>巴塘河谷</h1>
+  <p class="h1-latin">Southern Batang Valley Loop</p>
+  <p class="standfirst">River gravel bars at first light, then south on the G214 to the Batang grassland for snowfinches and raptors, back north to Princess Wencheng Temple and the Leba Valley. A morning loop that returns you to town for lunch — or keeps you out all day if the valley delivers.</p>
+  <div class="day-nav">
+    <a class="here" href="yushu-batang.html">Day 1 · Batang Loop</a>
+    <a href="yushu-longbao.html">Day 2 · Longbao Cranes</a>
+  </div>
+</header>
+
+<div class="alert">
+  <h2>Coordinates &amp; Amap 高德地图</h2>
+  <p>Each stop has tap-to-copy buttons: one for the coordinates, one for the name in 汉字 — paste either into Amap's search box. Amap expects <b>GCJ-02</b> coordinates. Most pins below came from Google's places data and are already GCJ-02-shifted, so they'll land right. The one stop tagged <span class="datum wgs">WGS-84</span> is a raw GPS reading — expect it to sit roughly 100–500 m off in Amap. Nothing has been converted; each pin is labeled with its datum.</p>
+  <p>The Lebagou pin is <b>approximate</b> — it's a valley birded from the road starting at the temple, not a point destination.</p>
+</div>
+
+<div class="sec-head">The route</div>
+
+<div class="diagram">
+  <!-- Schematic only — node positions are roughly geographic, roads are stylized.
+       No map tiles: works offline, works in China. -->
+  <svg viewBox="0 0 360 430" role="img" aria-label="Schematic route diagram of the Southern Batang Valley loop: town, wetland park, south on G214 to the X308 junction and Batang grassland, back north to Princess Wencheng Temple and Leba Valley, return to town on the old G214.">
+    <!-- rivers / valley hints -->
+    <path d="M 20 22 C 90 30, 160 34, 340 26" fill="none" stroke="#CBD8CB" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <text x="342" y="16" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#7D9A82" text-anchor="end">扎曲 Zhaqu R.</text>
+
+    <!-- return leg via old G214 (dashed) -->
+    <path d="M 208 228 C 160 170, 110 90, 76 40" fill="none" stroke="#4A6B54" stroke-width="2" stroke-dasharray="2 7" opacity="0.8"/>
+    <text x="108" y="128" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#4A6B54" transform="rotate(-52 108 128)">return · old G214</text>
+
+    <!-- outbound legs -->
+    <path d="M 76 34 L 36 30" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+    <path d="M 76 34 C 110 110, 160 210, 198 282" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+    <path d="M 198 282 C 240 310, 285 340, 314 366" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+    <path d="M 314 366 C 280 320, 240 270, 208 228" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+    <path d="M 208 228 L 228 220" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+
+    <!-- road labels -->
+    <text x="150" y="168" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#4A6B54" transform="rotate(58 150 168)">G214 south</text>
+    <text x="252" y="316" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#4A6B54" transform="rotate(38 252 316)">X308 · airport rd</text>
+
+    <!-- nodes -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="500" text-anchor="middle">
+      <circle cx="76" cy="34" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="76" y="38" fill="#fff">1</text>
+      <circle cx="36" cy="30" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="36" y="34" fill="#fff">2</text>
+      <circle cx="198" cy="282" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="198" y="286" fill="#fff">3</text>
+      <circle cx="314" cy="366" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="314" y="370" fill="#fff">4</text>
+      <circle cx="208" cy="228" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="208" y="232" fill="#fff">5</text>
+      <circle cx="236" cy="217" r="10" fill="#EDF1EC" stroke="#4A6B54" stroke-width="2" stroke-dasharray="3 3"/>
+      <text x="236" y="221" fill="#4A6B54">6</text>
+    </g>
+
+    <!-- node labels -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="9.5" fill="#1E3A31">
+      <text x="94" y="30">玉树 Jiegu · start</text>
+      <text x="20" y="52">巴塘河湿地</text>
+      <text x="152" y="300" text-anchor="end">X308/G214 junction</text>
+      <text x="304" y="392" text-anchor="end">巴塘草原 · airport rd</text>
+      <text x="196" y="212" text-anchor="end">文成公主庙</text>
+      <text x="252" y="211">勒巴沟 ≈</text>
+    </g>
+
+    <!-- compass -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="10" fill="#4A6B54">
+      <line x1="336" y1="70" x2="336" y2="44" stroke="#4A6B54" stroke-width="1.5"/>
+      <path d="M 336 40 L 332 50 L 340 50 Z" fill="#4A6B54"/>
+      <text x="336" y="84" text-anchor="middle">N</text>
+    </g>
+  </svg>
+</div>
+<p class="caption">Schematic, not to scale. Solid-dash line = outbound; fine-dash = return via old G214. Node 6 is dashed because the Lebagou pin is approximate — the whole valley is the stop.</p>
+
+<div class="sec-head">The day</div>
+
+<div class="route">
+  <div class="spine" aria-hidden="true"></div>
+  <div class="spine-key top">town<br>river</div>
+  <div class="spine-key bot">valley<br>return</div>
+
+  <div class="stop">
+    <div class="time">6:30</div>
+    <span class="zh">玉树 · 结古镇</span>
+    <span class="py">Yùshù · Jiégǔ Zhèn</span>
+    <span class="en">Yushu / Jiegu · start in town</span>
+    <span class="leg">Start · 33.0029, 97.0128 <span class="datum">GCJ-02 · Google places</span></span>
+    <p>Before driving anywhere, scan the Zhaqu 扎曲 river gravel bars right in town. First light on the shingle is the best Ibisbill window of the day.</p>
+    <div class="species"><b>Targets</b>Ibisbill · White-capped Redstart</div>
+    <div class="coords">
+      <button class="copy" data-copy="33.0029,97.0128">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="玉树结古镇">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="time">7:00</div>
+    <span class="zh">巴塘河国家湿地公园</span>
+    <span class="py">Bātáng Hé Guójiā Shīdì Gōngyuán</span>
+    <span class="en">Batang River National Wetland Park</span>
+    <span class="leg">≈2 km · 5 min from stop 1 · 33.0039, 96.9927 <span class="datum">GCJ-02 · Google places</span></span>
+    <p>Riverside walk on the west edge of town. Work the water's edge slowly — dippers on the boulders, redstarts and wagtails on the margins, and a second chance at Ibisbill on any open gravel.</p>
+    <div class="species"><b>Targets</b>White-throated Dipper · redstarts · wagtails · Ibisbill chance</div>
+    <div class="coords">
+      <button class="copy" data-copy="33.0039,96.9927">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="巴塘河国家湿地公园">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="time">8:00</div>
+    <span class="zh">X308 / G214 路口</span>
+    <span class="py">X308 / G214 Lùkǒu</span>
+    <span class="en">X308/G214 junction · 15 km S of town</span>
+    <span class="leg">≈17 km · 25 min from stop 2 · 32.8696, 97.0708 <span class="datum wgs">WGS-84 · GPS reading</span></span>
+    <p>Back through town and south on the G214, then turn onto the X308. Bird the first stretch of the X308 from the roadside — pull well off, the shoulder traffic is light but fast.</p>
+    <span class="flag"><b>Datum note:</b> this is the one raw-GPS pin. In Amap it may sit ~100–500 m from the true junction — navigate to the pin, then trust your eyes for the actual turn.</span>
+    <div class="species"><b>Targets</b>Roadside scan — shrikes, rosefinches, whatever the valley offers</div>
+    <div class="coords">
+      <button class="copy" data-copy="32.8696,97.0708">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="X308与G214路口">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop key">
+    <div class="time">9:45</div>
+    <span class="zh">巴塘草原</span>
+    <span class="py">Bātáng Cǎoyuán</span>
+    <span class="en">Batang grassland · airport road</span>
+    <span class="leg">≈9 km · 15 min from stop 3 · 32.825, 97.125 <span class="datum">GCJ-02 · Google places</span></span>
+    <p>Open plateau grassland along the airport road. Stop often — the ground tits and snowfinches work the turf near yak herds, and keep one eye up for raptors riding the ridge lift.</p>
+    <div class="species"><b>Targets</b>Tibetan Ground Tit · White-rumped Snowfinch · Rufous-necked Snowfinch · Upland Buzzard · Himalayan Griffon · Saker Falcon</div>
+    <div class="coords">
+      <button class="copy" data-copy="32.825,97.125">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="巴塘草原">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="time">11:00</div>
+    <span class="zh">文成公主庙</span>
+    <span class="py">Wénchéng Gōngzhǔ Miào</span>
+    <span class="en">Princess Wencheng Temple</span>
+    <span class="leg">≈14 km · 25 min from stop 4 · 32.8979, 97.0747 <span class="datum">GCJ-02 · Google places</span></span>
+    <p>Old junipers and prayer-flag cliffs around the temple. Scan the rock faces for choughs and Snow Pigeon; the accentors skulk in the scrub at the base.</p>
+    <div class="species"><b>Targets</b>Red-billed &amp; Alpine Chough · Snow Pigeon · accentors</div>
+    <div class="coords">
+      <button class="copy" data-copy="32.8979,97.0747">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="文成公主庙">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop key">
+    <div class="time">11:45</div>
+    <span class="zh">勒巴沟</span>
+    <span class="py">Lèbā Gōu</span>
+    <span class="en">Leba Valley · starts at the temple</span>
+    <span class="leg">Starts at stop 5 · ≈32.902, 97.085 <span class="datum">GCJ-02 · Google places</span> · pin approximate</span>
+    <p>Work up the valley road at walking pace. Partridge and eared pheasant favor the scrubby slopes early and late; laughingthrushes call from the juniper; check the stream for mergansers. When you're done, return to town via the old G214 — about 20 km, birding as you go.</p>
+    <span class="flag"><b>Approximate pin.</b> Lebagou is a valley birded from the road, not a point — the coordinates just mark its mouth near the temple.</span>
+    <div class="species"><b>Targets</b>Tibetan Partridge · White Eared Pheasant · Elliot's Laughingthrush · mergansers</div>
+    <div class="coords">
+      <button class="copy" data-copy="32.902,97.085">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="勒巴沟">复制汉字 · copy name</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  ~80 km loop from town · roads paved throughout · 3,700–3,900 m — pace yourself<br>
+  Pins tagged GCJ-02 paste clean into Amap; the WGS-84 junction pin may sit 100–500 m off<br>
+  <a href="yushu-longbao.html">Day 2 · Longbao — Black-necked Cranes →</a><br>
+  <a href="index.html">← All pages</a>
+</footer>
+
+</div>
+
+<script>
+  function flash(btn){
+    var old = btn.textContent;
+    btn.textContent = "已复制 ✓ copied";
+    btn.classList.add("done");
+    setTimeout(function(){
+      btn.textContent = old;
+      btn.classList.remove("done");
+    }, 1400);
+  }
+
+  // Clipboard API needs https or localhost; the textarea fallback covers
+  // file:// and older WebViews so copying still works fully offline.
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll(".copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var text = btn.getAttribute("data-copy");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function(){ flash(btn); },
+          function(){ fallbackCopy(text); flash(btn); }
+        );
+      } else {
+        fallbackCopy(text);
+        flash(btn);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玉树 Day 2 — Longbao Black-necked Cranes</title>
+<style>
+  /* No external requests: system fonts only, everything inline.
+     Page must keep working offline on a phone in rural Qinghai. */
+  :root{
+    --mist:#EDF1EC;
+    --paper:#FFFFFF;
+    --cedar:#1E3A31;
+    --moss:#4A6B54;
+    --fern:#7D9A82;
+    --taro:#7E6A8F;
+    --brick:#A8492A;
+    --rule:#CBD8CB;
+    --serif:Georgia,"Times New Roman","Noto Serif SC","Songti SC","STSong",serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
+    --zh-serif:"Noto Serif SC","Songti SC","STSong",Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--mist);
+    color:var(--cedar);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 72px;}
+
+  /* ---------- masthead ---------- */
+
+  header{padding:56px 0 28px;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--moss);
+  }
+
+  h1{
+    font-family:var(--zh-serif);
+    font-weight:600;
+    font-size:clamp(40px,11vw,62px);
+    line-height:1.02;
+    margin:14px 0 4px;
+    letter-spacing:.02em;
+  }
+
+  .h1-latin{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(21px,5.5vw,28px);
+    color:var(--moss);
+    margin:0 0 22px;
+  }
+
+  .standfirst{font-size:19px;max-width:52ch;margin:0;}
+
+  /* ---------- day nav ---------- */
+
+  .day-nav{
+    display:flex;
+    gap:10px;
+    margin-top:24px;
+  }
+  .day-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 8px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--moss);
+    background:var(--paper);
+    border:1px solid var(--rule);
+  }
+  .day-nav a.here{
+    color:#fff;
+    background:var(--moss);
+    border-color:var(--moss);
+  }
+  .day-nav a:hover,.day-nav a:focus{border-color:var(--cedar);color:var(--cedar);}
+  .day-nav a.here:hover,.day-nav a.here:focus{color:#fff;}
+
+  /* ---------- alert ---------- */
+
+  .alert{
+    margin:30px 0 0;
+    padding:18px 20px;
+    background:var(--paper);
+    border-left:4px solid var(--brick);
+  }
+  .alert h2{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--brick);
+    margin:0 0 8px;
+  }
+  .alert p{margin:0;font-size:16px;}
+  .alert p + p{margin-top:8px;}
+
+  /* ---------- shared section head ---------- */
+
+  .sec-head{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--moss);
+    margin:56px 0 18px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  /* ---------- route diagram ---------- */
+
+  .diagram{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:10px 6px 4px;
+  }
+  .diagram svg{width:100%;height:auto;display:block;}
+
+  .caption{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    margin-top:10px;
+  }
+
+  /* ---------- spine + timeline ---------- */
+
+  .route{position:relative;padding-left:74px;}
+
+  .spine{
+    position:absolute;
+    left:52px;top:8px;bottom:8px;
+    width:3px;
+    background:linear-gradient(180deg,#C9773F 0%,#9E8A4E 18%,var(--fern) 46%,var(--moss) 74%,var(--cedar) 100%);
+    border-radius:2px;
+  }
+
+  .spine-key{
+    position:absolute;
+    left:0;
+    width:44px;
+    text-align:right;
+    font-family:var(--mono);
+    font-size:10px;
+    line-height:1.3;
+    color:var(--moss);
+  }
+  .spine-key.top{top:0;}
+  .spine-key.bot{bottom:0;}
+
+  .stop{position:relative;margin-bottom:38px;}
+
+  .stop::before{
+    content:"";
+    position:absolute;
+    left:-24px;top:9px;
+    width:11px;height:11px;
+    border-radius:50%;
+    background:var(--mist);
+    border:3px solid var(--moss);
+  }
+  .stop.key::before{border-color:var(--taro);background:var(--taro);}
+
+  .time{
+    position:absolute;
+    left:-74px;
+    top:6px;
+    width:44px;
+    text-align:right;
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:500;
+    color:var(--cedar);
+  }
+
+  .zh{
+    font-family:var(--zh-serif);
+    font-weight:600;
+    font-size:23px;
+    line-height:1.25;
+    display:block;
+  }
+  .py{
+    font-style:italic;
+    font-size:15px;
+    color:var(--taro);
+    display:block;
+    margin-top:1px;
+  }
+  .en{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--moss);
+    display:block;
+    margin-top:5px;
+  }
+  .stop p{margin:10px 0 0;font-size:16.5px;}
+
+  .leg{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    display:block;
+    margin-top:6px;
+  }
+
+  .datum{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.08em;
+    padding:1px 7px;
+    border-radius:999px;
+    border:1px solid var(--rule);
+    color:var(--moss);
+    vertical-align:1px;
+  }
+  .datum.wgs{
+    color:var(--brick);
+    border-color:var(--brick);
+  }
+
+  .coords{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--cedar);
+    margin-top:8px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+  }
+
+  .copy{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--taro);
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:6px 11px;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .copy:active{background:var(--mist);}
+  .copy.done{color:var(--paper);background:var(--moss);border-color:var(--moss);}
+
+  .species{
+    margin:10px 0 0;
+    padding:12px 16px;
+    background:var(--paper);
+    border-left:3px solid var(--fern);
+    font-size:15px;
+  }
+  .species b{
+    font-family:var(--mono);
+    font-weight:500;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--moss);
+    display:block;
+    margin-bottom:5px;
+  }
+
+  .flag{
+    display:block;
+    margin-top:10px;
+    padding:10px 14px;
+    background:var(--paper);
+    border-left:3px solid var(--brick);
+    font-size:15px;
+  }
+  .flag b{color:var(--brick);}
+
+  footer{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--moss);
+    line-height:1.9;
+  }
+  footer a{color:var(--taro);text-decoration:none;border-bottom:1px solid var(--rule);}
+  footer a:hover,footer a:focus{color:var(--cedar);border-color:var(--cedar);}
+
+  @media (max-width:520px){
+    body{font-size:16px;}
+    .wrap{padding:0 16px 56px;}
+    .route{padding-left:58px;}
+    .spine{left:40px;}
+    .spine-key{width:32px;}
+    .time{left:-58px;width:34px;font-size:11px;}
+    .zh{font-size:21px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Day 2 · Yushu 玉树 · ~70 km one way · 4,200 m</div>
+  <h1>隆宝滩</h1>
+  <p class="h1-latin">Longbao — Black-necked Cranes</p>
+  <p class="standfirst">One road, one valley, one bird. Ninety minutes west on the S308 to a 4,200-metre wetland basin where Black-necked Crane families feed in the open — late August means this year's chicks are on the ground with their parents.</p>
+  <div class="day-nav">
+    <a href="yushu-batang.html">Day 1 · Batang Loop</a>
+    <a class="here" href="yushu-longbao.html">Day 2 · Longbao Cranes</a>
+  </div>
+</header>
+
+<div class="alert">
+  <h2>Coordinates &amp; Amap 高德地图</h2>
+  <p>Both stops have tap-to-copy buttons for coordinates and the name in 汉字 — paste either into Amap's search box. Amap expects <b>GCJ-02</b>; both pins below are from Google's places data and already GCJ-02-shifted, so they'll land right. Nothing has been converted.</p>
+  <p>The Longbao pin is <b>approximate</b> — the reserve is a long valley birded from the S308 as it crosses the floor, not a point destination. Drive the crossing slowly and stop wherever birds show.</p>
+</div>
+
+<div class="sec-head">The route</div>
+
+<div class="diagram">
+  <!-- Schematic only — no map tiles: works offline, works in China. -->
+  <svg viewBox="0 0 360 190" role="img" aria-label="Schematic route diagram: from Yushu town, west-northwest on the S308 about 70 kilometres to the Longbao valley crossing.">
+    <!-- valley floor band at Longbao -->
+    <path d="M 30 44 C 60 58, 90 66, 128 60" fill="none" stroke="#CBD8CB" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+    <text x="30" y="30" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#7D9A82">valley floor · 4,200 m wetland</text>
+
+    <!-- S308 -->
+    <path d="M 300 148 C 240 130, 160 96, 74 54" fill="none" stroke="#7E6A8F" stroke-width="3" stroke-dasharray="6 7" opacity="0.85"/>
+    <text x="176" y="126" font-family="SF Mono,Menlo,Consolas,monospace" font-size="9" fill="#4A6B54" transform="rotate(-24 176 126)">S308 · ≈70 km · 1.5 hr</text>
+
+    <!-- nodes -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="500" text-anchor="middle">
+      <circle cx="300" cy="148" r="12" fill="#7E6A8F" stroke="#fff" stroke-width="2"/>
+      <text x="300" y="152" fill="#fff">1</text>
+      <circle cx="74" cy="54" r="10" fill="#EDF1EC" stroke="#4A6B54" stroke-width="2" stroke-dasharray="3 3"/>
+      <text x="74" y="58" fill="#4A6B54">2</text>
+    </g>
+
+    <!-- node labels -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="9.5" fill="#1E3A31">
+      <text x="298" y="174" text-anchor="end">玉树 Jiegu · start</text>
+      <text x="90" y="76">隆宝 Longbao ≈</text>
+    </g>
+
+    <!-- compass -->
+    <g font-family="SF Mono,Menlo,Consolas,monospace" font-size="10" fill="#4A6B54">
+      <line x1="336" y1="60" x2="336" y2="34" stroke="#4A6B54" stroke-width="1.5"/>
+      <path d="M 336 30 L 332 40 L 340 40 Z" fill="#4A6B54"/>
+      <text x="336" y="74" text-anchor="middle">N</text>
+    </g>
+  </svg>
+</div>
+<p class="caption">Schematic, not to scale. Node 2 is dashed because the Longbao pin is approximate — bird the whole S308 crossing of the valley floor.</p>
+
+<div class="sec-head">The day</div>
+
+<div class="route">
+  <div class="spine" aria-hidden="true"></div>
+  <div class="spine-key top">town<br>3,700m</div>
+  <div class="spine-key bot">valley<br>4,200m</div>
+
+  <div class="stop">
+    <div class="time">6:00</div>
+    <span class="zh">玉树 · 结古镇</span>
+    <span class="py">Yùshù · Jiégǔ Zhèn</span>
+    <span class="en">Yushu / Jiegu · start in town</span>
+    <span class="leg">Start · 33.0029, 97.0128 <span class="datum">GCJ-02 · Google places</span></span>
+    <p>Early start — the cranes feed most actively in the first hours, and morning light comes down the valley behind you on the drive out. Fuel up, top off water, and expect no services until you're back.</p>
+    <div class="species"><b>En route</b>Roadside raptors and snowfinches as the S308 climbs</div>
+    <div class="coords">
+      <button class="copy" data-copy="33.0029,97.0128">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="玉树结古镇">复制汉字 · copy name</button>
+    </div>
+  </div>
+
+  <div class="stop key">
+    <div class="time">7:30</div>
+    <span class="zh">隆宝国家级自然保护区</span>
+    <span class="py">Lóngbǎo Guójiājí Zìrán Bǎohùqū</span>
+    <span class="en">Longbao National Nature Reserve</span>
+    <span class="leg">≈70 km · 1.5 hr from stop 1 · ≈33.20, 96.52 <span class="datum">GCJ-02 · Google places</span> · pin approximate</span>
+    <p>The S308 runs right across the 4,200 m valley floor — bird from the road, scoping the marsh and pools on both sides. Late August is family season: look for crane pairs trailing one or two rusty-headed chicks. Work the flocks of geese and shelduck for anything hiding among them, and scan the drier margins for a hunting Red Fox.</p>
+    <span class="flag"><b>Approximate pin.</b> Longbao is a valley birded from the road over several kilometres, not a point — the coordinates just put you on the crossing. It's a national reserve: stay on the road corridor and keep distance from the crane families.</span>
+    <div class="species"><b>Targets</b>Black-necked Crane (family groups) · Bar-headed Goose · Ruddy Shelduck · terns · snowfinches · Red Fox (mammal)</div>
+    <div class="coords">
+      <button class="copy" data-copy="33.20,96.52">复制坐标 · copy coords</button>
+      <button class="copy" data-copy="隆宝国家级自然保护区">复制汉字 · copy name</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  ~70 km one way · ≈1.5 hr each way on the S308 · valley floor at 4,200 m — move slowly<br>
+  Both pins GCJ-02 (Google places) — paste clean into Amap, no conversion needed<br>
+  <a href="yushu-batang.html">← Day 1 · Southern Batang Valley Loop</a><br>
+  <a href="index.html">← All pages</a>
+</footer>
+
+</div>
+
+<script>
+  function flash(btn){
+    var old = btn.textContent;
+    btn.textContent = "已复制 ✓ copied";
+    btn.classList.add("done");
+    setTimeout(function(){
+      btn.textContent = old;
+      btn.classList.remove("done");
+    }, 1400);
+  }
+
+  // Clipboard API needs https or localhost; the textarea fallback covers
+  // file:// and older WebViews so copying still works fully offline.
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll(".copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var text = btn.getAttribute("data-copy");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function(){ flash(btn); },
+          function(){ fallbackCopy(text); flash(btn); }
+        );
+      } else {
+        fallbackCopy(text);
+        flash(btn);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
