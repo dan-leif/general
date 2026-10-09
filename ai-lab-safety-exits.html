@@ -71,7 +71,7 @@ ul.plain b{color:var(--fg);font-weight:600}
 <body>
 <div class="wrap">
   <header>
-    <h1>AI lab departures over safety concerns, 2015–2026</h1>
+    <h1>AI lab departures over safety concerns, 2020–2026</h1>
     <p class="lede">Employees who resigned where the person, or credible reporting, tied the exit to safety, responsibility or governance concerns. Counted by year of departure, through October 9, 2026. Every tab shares the same years and the same 0–10 scale. Firings are listed separately and not counted.</p>
   </header>
 
@@ -104,7 +104,7 @@ const LABS=["openai","anthropic","google","xai"];
 const DATA={
  openai:{
   name:"OpenAI",founded:2015,
-  note:"No qualifying resignations found 2015–2019, 2022–2023, or with a stated reason in 2025. The 2024 spike follows the November 2023 board crisis and the May 2024 Superalignment team breakup.",
+  note:"No qualifying resignations found 2022–2023 or with a stated reason in 2025. The 2024 spike follows the November 2023 board crisis and the May 2024 Superalignment team breakup.",
   sources:"Main sources: Vox/Decoder on 2024 exits, Fortune on Adler, NYT/Ars Technica on Hitzig, Reuters on Kalinowski, WIRED on Achiam, The Atlantic and Business Insider on Robinson. The 2020–21 Anthropic founders' exact exit months are approximate.",
   excluded:[
    ["Fired, not resigned:","Leopold Aschenbrenner and Pavel Izmailov (Apr 2024, alleged leaks); Ryan Beiermeister (early 2026, policy exec who opposed \"adult mode\"); three safety researchers (late Sep 2026, alleged info sharing with an outside safety group)."],
@@ -184,7 +184,7 @@ DATA.all={
   excluded:LABS.flatMap(k=>DATA[k].excluded.filter(e=>/Fired|Maven|Founder/.test(e[0])).map(([b,t])=>[`${DATA[k].name}, ${b.replace(/:$/,"").toLowerCase()}:`,t])),
   rows:LABS.flatMap(k=>DATA[k].rows.map(r=>({...r,lab:k}))).sort((a,b)=>a.y-b.y)
 };
-const YEARS=[];for(let y=2015;y<=2026;y++)YEARS.push(y);
+const YEARS=[];for(let y=2020;y<=2026;y++)YEARS.push(y);
 const TIER_SERIES=[["explicit","var(--explicit)"],["implied","var(--implied)"],["borderline","var(--surface)"]];
 const LAB_SERIES=LABS.map(k=>[k,`var(--c-${k})`]);
 const MAX=10, W=640,H=280,L=34,R=8,T=16,B=34, IW=W-L-R, IH=H-T-B, BW=IW/YEARS.length, SLOTS=4;
@@ -214,7 +214,7 @@ function render(co){
   document.getElementById('sources').textContent=d.sources;
   document.getElementById('legend').innerHTML = d.combined
     ? LABS.map(k=>`<span><i class="sw" style="background:var(--c-${k})"></i>${DATA[k].name}</span>`).join("")
-    : `<span><i class="sw" style="background:var(--explicit)"></i>Stated safety/governance reason</span><span><i class="sw" style="background:var(--implied)"></i>Attributed by reporting</span><span><i class="sw b"></i>Borderline</span>`+(d.founded>2015?`<span><i class="sw n"></i>Not yet founded</span>`:"");
+    : `<span><i class="sw" style="background:var(--explicit)"></i>Stated safety/governance reason</span><span><i class="sw" style="background:var(--implied)"></i>Attributed by reporting</span><span><i class="sw b"></i>Borderline</span>`+(d.founded>YEARS[0]?`<span><i class="sw n"></i>Not yet founded</span>`:"");
   const series = d.combined ? LAB_SERIES : TIER_SERIES;
   const key = d.combined ? "lab" : "t";
   YEARS.forEach(yr=>{
