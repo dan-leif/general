@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Lab Safety Exits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0}
+/* Layout: single reading column; lab tabs, fixed-scale chart, then a year-grouped ledger */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#1b2230; --muted:#5d6676; --line:#dde1e8; --hatch:#e9ecf1;
+  --explicit:#1f6f78; --implied:#8fb8bd; --border:#b0743a;
+  --c-openai:#1f6f78; --c-anthropic:#b86a2c; --c-google:#5257a8; --c-xai:#7d8696;
+  --display:"Source Serif 4", Georgia, serif;
+  --body:"Public Sans", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12161d; --surface:#1a2029; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2c3440; --hatch:#222935;
+  --explicit:#4fb3bd; --implied:#2f5f64; --border:#d79a5c;
+  --c-openai:#4fb3bd; --c-anthropic:#e0995c; --c-google:#8e93e6; --c-xai:#a9b1bf; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161d; --surface:#1a2029; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2c3440; --hatch:#222935;
+  --explicit:#4fb3bd; --implied:#2f5f64; --border:#d79a5c;
+  --c-openai:#4fb3bd; --c-anthropic:#e0995c; --c-google:#8e93e6; --c-xai:#a9b1bf; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:28px 48px;display:grid;gap:28px}
+h1{font-family:var(--display);font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:20px;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:8px 0 0;max-width:62ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 16px;display:grid;gap:14px;min-width:0}
+.toggle{display:flex;flex-wrap:wrap;gap:3px;border:1px solid var(--line);border-radius:8px;padding:3px;background:var(--bg);justify-self:start;max-width:100%}
+.toggle button{font:600 14px var(--body);color:var(--muted);background:transparent;border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.toggle button:focus-visible{outline:2px solid var(--explicit);outline-offset:2px}
+.headrow{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;justify-content:space-between}
+.total{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:2px;display:inline-block;box-sizing:border-box}
+.sw.b{border:2px solid var(--border)}
+.sw.n{background:repeating-linear-gradient(45deg,var(--hatch) 0 3px,transparent 3px 6px);border:1px solid var(--line)}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:340px;height:auto}
+.chart rect.bar{transition:y .35s ease,height .35s ease,fill .35s ease}
+@media (prefers-reduced-motion:reduce){.chart rect.bar{transition:none}}
+.note{font-size:13px;color:var(--muted);margin:0}
+.year{display:grid;gap:10px}
+.yearhead{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.yearhead .y{font-family:var(--mono);font-size:18px;font-weight:500}
+.yearhead .c{font-size:13px;color:var(--muted)}
+.row{display:grid;grid-template-columns:10px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.mark{width:10px;border-radius:2px;box-sizing:border-box}
+.mark.explicit{background:var(--explicit)} .mark.implied{background:var(--implied)} .mark.borderline{border:2px solid var(--border)}
+.who{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.who b{font-weight:600}
+.role{color:var(--muted);font-size:13.5px}
+.date{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.why{margin:4px 0 0;max-width:65ch}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lab{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--muted);font-size:14px}
+ul.plain b{color:var(--fg);font-weight:600}
+.src{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI lab departures over safety concerns, 2015–2026</h1>
+    <p class="lede">Employees who resigned where the person, or credible reporting, tied the exit to safety, responsibility or governance concerns. Counted by year of departure, through October 9, 2026. Every tab shares the same years and the same 0–10 scale. Firings are listed separately and not counted.</p>
+  </header>
+
+  <section class="panel" aria-label="Departures per year">
+    <div class="toggle" role="group" aria-label="Lab">
+      <button type="button" id="btn-openai" data-co="openai" aria-pressed="true">OpenAI</button>
+      <button type="button" id="btn-anthropic" data-co="anthropic" aria-pressed="false">Anthropic</button>
+      <button type="button" id="btn-google" data-co="google" aria-pressed="false">Google</button>
+      <button type="button" id="btn-xai" data-co="xai" aria-pressed="false">xAI</button>
+      <button type="button" id="btn-all" data-co="all" aria-pressed="false">All labs</button>
+    </div>
+    <div class="headrow"><h2 id="charttitle">OpenAI departures per year</h2><span class="total" id="total"></span></div>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="chart"></div>
+    <p class="note" id="chartnote"></p>
+  </section>
+
+  <section style="display:grid;gap:22px" id="ledger" aria-label="Individuals"></section>
+
+  <section class="panel">
+    <h2>Not counted</h2>
+    <ul class="plain" id="notcounted"></ul>
+  </section>
+
+  <p class="src" id="sources"></p>
+</div>
+
+<script>
+const LABS=["openai","anthropic","google","xai"];
+const DATA={
+ openai:{
+  name:"OpenAI",founded:2015,
+  note:"No qualifying resignations found 2015–2019, 2022–2023, or with a stated reason in 2025. The 2024 spike follows the November 2023 board crisis and the May 2024 Superalignment team breakup.",
+  sources:"Main sources: Vox/Decoder on 2024 exits, Fortune on Adler, NYT/Ars Technica on Hitzig, Reuters on Kalinowski, WIRED on Achiam, The Atlantic and Business Insider on Robinson. The 2020–21 Anthropic founders' exact exit months are approximate.",
+  excluded:[
+   ["Fired, not resigned:","Leopold Aschenbrenner and Pavel Izmailov (Apr 2024, alleged leaks); Ryan Beiermeister (early 2026, policy exec who opposed \"adult mode\"); three safety researchers (late Sep 2026, alleged info sharing with an outside safety group)."],
+   ["Left with no safety reason given:","Paul Christiano (2021, left to do alignment theory at ARC), Cullen O'Keefe (Apr 2024), Ryan Lowe (2024), Lilian Weng (Nov 2024), Johannes Heidecke (2026)."],
+   ["Other causes:","Hieu Pham (Feb 2026, burnout); Suchir Balaji (2024, copyright concerns)."],
+   ["Jacob Coxon:","worked at OpenAI 2023–2026, but his public safety-motivated resignation (Sep 2026) was from Anthropic. He's counted in the Anthropic tab."],
+   ["Board, not staff:","Helen Toner and Tasha McCauley left the board in Nov 2023 after the failed Altman ouster."]
+  ],
+  rows:[
+ {y:2020,t:"implied",n:"Dario Amodei",r:"VP of Research",d:"Dec 2020",w:"Left to co-found Anthropic. Later described disagreements with leadership over how to build AI safely; did not criticize OpenAI publicly at the time."},
+ {y:2020,t:"implied",n:"Daniela Amodei",r:"VP of Safety & Policy",d:"Dec 2020",w:"Left with Dario to co-found Anthropic over the same differences in direction on safety."},
+ {y:2021,t:"implied",n:"Jack Clark",r:"Policy Director",d:"≈ early 2021",w:"Anthropic co-founder; part of the group that left over differences on safety and direction."},
+ {y:2021,t:"implied",n:"Chris Olah",r:"Interpretability researcher",d:"≈ early 2021",w:"Anthropic co-founder; same group departure."},
+ {y:2021,t:"implied",n:"Tom Brown",r:"GPT-3 lead engineer",d:"≈ early 2021",w:"Anthropic co-founder; same group departure."},
+ {y:2021,t:"implied",n:"Sam McCandlish",r:"Researcher",d:"≈ early 2021",w:"Anthropic co-founder; same group departure."},
+ {y:2021,t:"implied",n:"Ben Mann",r:"Engineer",d:"≈ early 2021",w:"Anthropic co-founder; same group departure."},
+ {y:2024,t:"explicit",n:"William Saunders",r:"Superalignment team",d:"Feb 2024",w:"Later said he lost trust that OpenAI would handle AGI responsibly; signed the June 2024 'Right to Warn' letter and testified to the Senate."},
+ {y:2024,t:"explicit",n:"Daniel Kokotajlo",r:"Governance researcher",d:"Apr 2024",w:"Said he quit after losing confidence OpenAI would behave responsibly around AGI. Gave up vested equity rather than sign a non-disparagement agreement."},
+ {y:2024,t:"implied",n:"Ilya Sutskever",r:"Co-founder, Chief Scientist, Superalignment co-lead",d:"May 14, 2024",w:"Gave no safety criticism publicly; widely reported as tied to the Nov 2023 board crisis and safety tensions. Founded Safe Superintelligence Inc."},
+ {y:2024,t:"explicit",n:"Jan Leike",r:"Head of Alignment, Superalignment co-lead",d:"May 17, 2024",w:"Said safety culture and processes had “taken a backseat to shiny products” and his team was starved of compute. Joined Anthropic."},
+ {y:2024,t:"explicit",n:"Gretchen Krueger",r:"Policy researcher",d:"May 2024",w:"Said she shared Leike's concerns and cited decision-making, accountability and transparency problems."},
+ {y:2024,t:"borderline",n:"John Schulman",r:"Co-founder, alignment lead",d:"Aug 2024",w:"Left for Anthropic to focus on alignment work; explicitly said it was not due to lack of support at OpenAI."},
+ {y:2024,t:"explicit",n:"Miles Brundage",r:"Senior Advisor, AGI Readiness",d:"Oct 2024",w:"Said neither OpenAI nor any frontier lab is ready for AGI and he wanted to do policy research free of publishing constraints. His team was disbanded."},
+ {y:2024,t:"explicit",n:"Richard Ngo",r:"Governance researcher",d:"Nov 2024",w:"Said it had become harder to trust that his work would benefit the world long term."},
+ {y:2024,t:"explicit",n:"Steven Adler",r:"Safety researcher",d:"Nov 2024 (announced Jan 2025)",w:"Called the AGI race a very risky gamble with huge downside and said he was frightened by the pace of AI development."},
+ {y:2024,t:"explicit",n:"Rosie Campbell",r:"Policy frontiers / AGI Readiness",d:"Nov–Dec 2024",w:"Cited unsettling organizational shifts and warned current safety measures may be insufficient for coming systems; felt she could pursue the mission better outside."},
+ {y:2025,t:"borderline",n:"Andrea Vallone",r:"Model policy safety research lead",d:"Nov 2025",w:"Led work on ChatGPT responses to users in distress; no public reason given for leaving."},
+ {y:2026,t:"explicit",n:"Zoë Hitzig",r:"Researcher (models, pricing, safety policy)",d:"Feb 9, 2026",w:"Resigned the day ChatGPT ad testing began. NYT essay warned ads could push OpenAI toward manipulating users and repeating Facebook's mistakes."},
+ {y:2026,t:"explicit",n:"Caitlin Kalinowski",r:"Head of Robotics & Consumer Hardware",d:"Mar 7, 2026",w:"Resigned over the Pentagon classified-network deal, saying domestic surveillance and lethal autonomy were “lines that deserved more deliberation than they got.”"},
+ {y:2026,t:"borderline",n:"Joshua Achiam",r:"Chief Futurist, ex-Mission Alignment lead",d:"Jul 2026",w:"Left after his Mission Alignment team was disbanded in Feb 2026; cited no single trigger and said he'd pursue safe AI from outside a frontier lab."},
+ {y:2026,t:"explicit",n:"David Robinson",r:"Safety transparency lead; drafted Preparedness Framework",d:"Late Sep–early Oct 2026",w:"Published an Atlantic essay arguing OpenAI's culture of speed and optimism is broken and that labs are not being careful enough."}
+ ]},
+ anthropic:{
+  name:"Anthropic",founded:2021,
+  note:"Anthropic was founded in 2021, so earlier years are shaded. No qualifying public resignations found 2021–2025; all three cases are from 2026, and two came within the same week in September.",
+  sources:"Main sources: Business Today and eWeek on Sharma, AP (via NBC and Qatar Tribune) and Axios on Coxon, Outlook India and Times of Oman on Benton.",
+  excluded:[
+   ["Arrivals, not departures:","Jan Leike (2024) and John Schulman (2024) joined Anthropic after leaving OpenAI; they appear in the OpenAI tab."],
+   ["Reporting caveat:","quiet exits without a public statement wouldn't show up in any source. The same caveat applies to every lab here."]
+  ],
+  rows:[
+ {y:2026,t:"explicit",n:"Mrinank Sharma",r:"Safeguards research team lead",d:"Feb 9, 2026",w:"Resignation letter warned the world is in peril from interconnected crises, including AI and bioweapons, and said he repeatedly felt pressure to set aside what matters most. Left to study poetry."},
+ {y:2026,t:"explicit",n:"Joe Benton",r:"Scalable Oversight team manager",d:"Late Aug 2026 (announced Sep 11)",w:"Said labs are racing to build machines far smarter than humans and we may not survive it; argued competition pushes every lab to cut safety corners. Joined METR."},
+ {y:2026,t:"explicit",n:"Jacob Coxon",r:"Pretraining researcher (ex-OpenAI)",d:"Sep 9, 2026",w:"Quit the AI industry, saying neither Anthropic nor OpenAI is acting responsibly and both are racing toward self-improving superintelligence. Reportedly gave up equity to leave."}
+ ]},
+ google:{
+  name:"Google",founded:2015,
+  note:"Includes Google Brain, Google Research and Google DeepMind. Before Hinton in 2023, Google's high-profile AI exits were over military contracts or ethics firings, which are listed under Not counted.",
+  sources:"Main sources: NYT and BBC on Hinton (May 2023), IBTimes on Chughtai, OECD.AI incident log on Engels.",
+  excluded:[
+   ["Project Maven (2018):","about a dozen employees resigned over Google's drone-imagery work for the Pentagon. Mostly unnamed, and a military-ethics objection rather than AI safety."],
+   ["Fired, not resigned:","Timnit Gebru (Dec 2020) and Margaret Mitchell (Feb 2021), Ethical AI team co-leads, pushed out after disputes over a paper on large language model risks."],
+   ["Other exits:","Meredith Whittaker (2019) left after alleging retaliation for organizing over Maven and harassment policy. Labor and ethics, not AI safety."]
+  ],
+  rows:[
+ {y:2023,t:"explicit",n:"Geoffrey Hinton",r:"VP & Engineering Fellow, Google Brain",d:"May 2023",w:"Left so he could speak freely about AI risks, including the chance it could outsmart and endanger humanity. Said Google itself had acted responsibly."},
+ {y:2026,t:"explicit",n:"Bilal Chughtai",r:"AGI safety & alignment, Google DeepMind",d:"Sep 14, 2026",w:"Said he is extremely concerned by the default trajectory of the technology, that AI has the potential to kill us all, and that time to avoid this may be running out."},
+ {y:2026,t:"implied",n:"Josh Engels",r:"AI safety researcher, Google DeepMind",d:"Sep 2026",w:"Left to join METR with Joe Benton to study AI systems that stray from human instructions. Linked by the OECD incident log to concerns about AI acting beyond human control; no direct quote found."}
+ ]},
+ xai:{
+  name:"xAI",founded:2023,
+  note:"xAI was founded in 2023. Reporting describes widespread safety discontent among staff, but no departing xAI employee has publicly given safety as the reason, so the count is thin.",
+  sources:"Main sources: The Verge via The Decoder on the founder exodus, Decrypt and MindStudio on the Devon Kim lawsuit, xAI and Babuschkin's own announcement (Aug 2025).",
+  excluded:[
+   ["Founder exodus (2025–26):","about half the co-founding team left by March 2026, including Tony Wu and Jimmy Ba (Feb 2026). Anonymous ex-staff told The Verge that \"there is zero safety whatsoever in the company,\" but no departing founder said so publicly. Musk called it a restructuring for speed."],
+   ["Fired, not resigned:","Devon Kim, an early employee, alleges in a June 2026 lawsuit that he was fired (≈ Sep 2025) after pushing for stronger Grok safeguards. These are claims, not findings."]
+  ],
+  rows:[
+ {y:2025,t:"borderline",n:"Igor Babuschkin",r:"Co-founder, engineering lead",d:"Aug 2025",w:"Left to start a venture firm backing AI safety research. Framed it as a positive move, with no criticism of xAI."}
+ ]}
+};
+// Combined view
+DATA.all={
+  name:"All labs",founded:2015,combined:true,
+  note:"Stacked by lab. Two waves stand out: OpenAI's 2024 exodus, and September 2026, when researchers left OpenAI, Anthropic and Google DeepMind within weeks of each other. Several of them regrouped at METR.",
+  sources:"Combines the four lab tabs. Each person is counted once, under the lab they resigned from. Classification is a judgment call, and stated reasons are paraphrased.",
+  excluded:LABS.flatMap(k=>DATA[k].excluded.filter(e=>/Fired|Maven|Founder/.test(e[0])).map(([b,t])=>[`${DATA[k].name}, ${b.replace(/:$/,"").toLowerCase()}:`,t])),
+  rows:LABS.flatMap(k=>DATA[k].rows.map(r=>({...r,lab:k}))).sort((a,b)=>a.y-b.y)
+};
+const YEARS=[];for(let y=2015;y<=2026;y++)YEARS.push(y);
+const TIER_SERIES=[["explicit","var(--explicit)"],["implied","var(--implied)"],["borderline","var(--surface)"]];
+const LAB_SERIES=LABS.map(k=>[k,`var(--c-${k})`]);
+const MAX=10, W=640,H=280,L=34,R=8,T=16,B=34, IW=W-L-R, IH=H-T-B, BW=IW/YEARS.length, SLOTS=4;
+const sy=v=>T+IH-(v/MAX)*IH;
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+(function(){
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="charttitle"><defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="6" fill="var(--hatch)"/></pattern></defs>`;
+  YEARS.forEach((yr,i)=>{s+=`<rect id="nf-${yr}" x="${L+i*BW}" y="${T}" width="${BW}" height="${IH}" fill="url(#hatch)" opacity="0"/>`});
+  for(let v=0;v<=MAX;v+=2){s+=`<line x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end" font-size="11" font-family="JetBrains Mono, monospace" fill="var(--muted)">${v}</text>`}
+  YEARS.forEach((yr,i)=>{
+    const x=L+i*BW+BW*0.18, w=BW*0.64;
+    for(let k=0;k<SLOTS;k++) s+=`<rect class="bar" id="s${k}-${yr}" x="${x}" width="${w}" y="${sy(0)}" height="0" fill="var(--explicit)" stroke="var(--border)" stroke-width="0"><title></title></rect>`;
+    s+=`<text id="t-${yr}" x="${x+w/2}" y="${sy(0)-5}" text-anchor="middle" font-size="12" font-weight="600" font-family="JetBrains Mono, monospace" fill="var(--fg)"></text>`;
+    s+=`<text x="${x+w/2}" y="${H-12}" text-anchor="middle" font-size="11" font-family="JetBrains Mono, monospace" fill="var(--muted)">'${String(yr).slice(2)}</text>`;
+  });
+  document.getElementById('chart').innerHTML=s+`</svg>`;
+})();
+
+function render(co){
+  const d=DATA[co];
+  document.querySelectorAll('.toggle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.co===co));
+  document.getElementById('charttitle').textContent=`${d.name}: departures per year`;
+  const ex=d.rows.filter(r=>r.t==="explicit").length;
+  document.getElementById('total').textContent=`${d.rows.length} total · ${ex} stated`;
+  document.getElementById('chartnote').textContent=d.note;
+  document.getElementById('sources').textContent=d.sources;
+  document.getElementById('legend').innerHTML = d.combined
+    ? LABS.map(k=>`<span><i class="sw" style="background:var(--c-${k})"></i>${DATA[k].name}</span>`).join("")
+    : `<span><i class="sw" style="background:var(--explicit)"></i>Stated safety/governance reason</span><span><i class="sw" style="background:var(--implied)"></i>Attributed by reporting</span><span><i class="sw b"></i>Borderline</span>`+(d.founded>2015?`<span><i class="sw n"></i>Not yet founded</span>`:"");
+  const series = d.combined ? LAB_SERIES : TIER_SERIES;
+  const key = d.combined ? "lab" : "t";
+  YEARS.forEach(yr=>{
+    document.getElementById('nf-'+yr).setAttribute('opacity',yr<d.founded?1:0);
+    let base=0;
+    for(let k=0;k<SLOTS;k++){
+      const el=document.getElementById(`s${k}-${yr}`), sr=series[k];
+      const n=sr?d.rows.filter(r=>r.y===yr&&r[key]===sr[0]).length:0;
+      const outline=!d.combined&&sr&&sr[0]==="borderline"&&n>0, pad=outline?1:0;
+      el.setAttribute('y',sy(base+n)+pad);
+      el.setAttribute('height',Math.max(0,sy(base)-sy(base+n)-2*pad));
+      if(sr)el.setAttribute('fill',sr[1]);
+      el.setAttribute('stroke-width',outline?2:0);
+      el.querySelector('title').textContent=n?`${yr}: ${n} ${d.combined?DATA[sr[0]].name:sr[0]}`:"";
+      base+=n;
+    }
+    const t=document.getElementById('t-'+yr); t.textContent=base||""; t.setAttribute('y',sy(base)-5);
+  });
+  const label={explicit:"Stated reason",implied:"Attributed",borderline:"Borderline"};
+  let h="";
+  [...new Set(d.rows.map(r=>r.y))].forEach(yr=>{
+    const rows=d.rows.filter(r=>r.y===yr), e=rows.filter(r=>r.t==="explicit").length;
+    h+=`<div class="year"><div class="yearhead"><span class="y">${yr}</span><span class="c">${rows.length} listed · ${e} with a stated reason</span></div>`;
+    rows.forEach(r=>{
+      const lab=r.lab?`<span class="lab" style="color:var(--c-${r.lab})">${DATA[r.lab].name}</span>`:"";
+      h+=`<div class="row"><div class="mark ${r.t}"></div><div style="min-width:0"><div class="who">${lab}<b>${esc(r.n)}</b><span class="role">${esc(r.r)}</span></div><div class="who"><span class="date">${esc(r.d)}</span><span class="tag">${label[r.t]}</span></div><p class="why">${esc(r.w)}</p></div></div>`;
+    });
+    h+=`</div>`;
+  });
+  document.getElementById('ledger').innerHTML=h;
+  document.getElementById('notcounted').innerHTML=d.excluded.map(([b,t])=>`<li><b>${esc(b)}</b> ${esc(t)}</li>`).join("");
+  try{localStorage.setItem('co',co)}catch(e){}
+}
+document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.co)));
+let start="openai";try{const s=localStorage.getItem('co');if(DATA[s])start=s}catch(e){}
+render(start);
+</script>
+</body>
+</html>
