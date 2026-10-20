@@ -1,4 +1,0 @@
-# Beliefs files hold personal political views. Never commit them to a public repo.
-beliefs*.json
-*.beliefs.json
-private/
