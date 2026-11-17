@@ -1,0 +1,387 @@
+{
+  "generated": "2026-11-17T19:31+00:00",
+  "feeds_checked": 14,
+  "errors": [],
+  "items": [
+    {
+      "url": "https://thezvi.substack.com/p/ai-194-spy-versus-guy",
+      "title": "AI #194: Spy Versus Guy",
+      "source": "Don't Worry About the Vase",
+      "author": "Zvi Mowshowitz",
+      "published": "2026-11-12T14:31:34+00:00",
+      "summary": "Tomorrow I head to Washington DC for a conference called The Takeoff.",
+      "words": 12956,
+      "minutes": 81,
+      "full_text_in_feed": true,
+      "score": 29.4,
+      "matched": [
+        "ai safety",
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026",
+      "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
+      "source": "Latent Space",
+      "author": "swyx .ai",
+      "published": "2026-11-17T09:24:56+00:00",
+      "summary": "November 16, 2026 — Computer gets Teammates, Perplexity ships Monitor API, and a new research lab launches.",
+      "words": 2190,
+      "minutes": 14,
+      "full_text_in_feed": true,
+      "score": 25.8,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "frontier model"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate",
+      "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+      "source": "Latent Space",
+      "author": "swyx .ai",
+      "published": "2026-11-11T09:34:28+00:00",
+      "summary": "November 10, 2026 — Google GA's Gemini 4 Carbon.",
+      "words": 6469,
+      "minutes": 40,
+      "full_text_in_feed": true,
+      "score": 24.8,
+      "matched": [
+        "ai safety",
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://latent.space/p/ainews-d-day-decision-models-day",
+      "title": "[AINews] D-Day (Decision Models Day)",
+      "source": "Latent Space",
+      "author": "swyx .ai",
+      "published": "2026-11-12T05:26:54+00:00",
+      "summary": "November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers.",
+      "words": 5902,
+      "minutes": 37,
+      "full_text_in_feed": true,
+      "score": 21.2,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "frontier model"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://thezvi.substack.com/p/fable-52-is-the-new-bazooka",
+      "title": "Fable 5.2 is the New Bazooka",
+      "source": "Don't Worry About the Vase",
+      "author": "Zvi Mowshowitz",
+      "published": "2026-11-16T20:27:14+00:00",
+      "summary": "You do not always want a bazooka.",
+      "words": 5380,
+      "minutes": 34,
+      "full_text_in_feed": true,
+      "score": 19.5,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "reasoning"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+      "title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+      "source": "Import AI",
+      "author": "Jack Clark",
+      "published": "2026-11-16T14:01:15+00:00",
+      "summary": "Plus: CucumberVision!",
+      "words": 2711,
+      "minutes": 17,
+      "full_text_in_feed": true,
+      "score": 19.4,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "frontier model",
+        "reasoning"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai",
+      "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+      "source": "AI - Ars Technica",
+      "author": "Jeremy Hsu",
+      "published": "2026-11-11T18:16:40+00:00",
+      "summary": "Latest example of the AI boom’s circular financing comes as AI trade wobbles.",
+      "words": 141,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": 17.0,
+      "matched": [
+        "anthropic",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://thezvi.substack.com/p/fable-and-mythos-52-the-system-card",
+      "title": "Fable and Mythos 5.2: The System Card",
+      "source": "Don't Worry About the Vase",
+      "author": "Zvi Mowshowitz",
+      "published": "2026-11-11T16:25:17+00:00",
+      "summary": "It’s that time again: Introducing the world’s most powerful model, Claude Mythos 5.2.",
+      "words": 7622,
+      "minutes": 48,
+      "full_text_in_feed": true,
+      "score": 16.9,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "reasoning"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts",
+      "title": "I spoke to seven physics experts grappling with the AI revolution",
+      "source": "Understanding AI",
+      "author": "Dan Kagan-Kans",
+      "published": "2026-11-17T14:51:56+00:00",
+      "summary": "AI can now do the calculations. What’s left for theoretical physicists?",
+      "words": 3965,
+      "minutes": 25,
+      "full_text_in_feed": true,
+      "score": 13.9,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "jobs"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/11/16/1148624/the-open-source-movement-wants-jensen-huang-back",
+      "title": "The open-source movement wants Jensen Huang back",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "James O'Donnell",
+      "published": "2026-11-16T18:38:47+00:00",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. On Friday, a petition to reinstate Jensen Huang as CEO of Nvidia began circulating on social media, and by Monday it…",
+      "words": 739,
+      "minutes": 5,
+      "full_text_in_feed": true,
+      "score": 11.5,
+      "matched": [
+        "claude",
+        "anthropic",
+        "openai",
+        "open source"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+      "title": "Open-source AI without Jensen",
+      "source": "Interconnects AI",
+      "author": "Nathan Lambert",
+      "published": "2026-11-14T12:23:15+00:00",
+      "summary": "A decapitation. It’s time to rebuild.",
+      "words": 1477,
+      "minutes": 9,
+      "full_text_in_feed": true,
+      "score": 11.4,
+      "matched": [
+        "ai safety",
+        "anthropic",
+        "openai",
+        "regulation",
+        "open source"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://garymarcus.substack.com/p/the-great-generative-ai-unraveling",
+      "title": "The great Generative AI unraveling",
+      "source": "Marcus on AI",
+      "author": "Gary Marcus",
+      "published": "2026-11-13T18:26:49+00:00",
+      "summary": "Things are starting to fall apart",
+      "words": 789,
+      "minutes": 5,
+      "full_text_in_feed": true,
+      "score": 10.0,
+      "matched": [
+        "claude",
+        "anthropic",
+        "openai",
+        "economics"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.astralcodexten.com/p/ai-company-employees-should-unionize",
+      "title": "AI Company Employees Should Unionize",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-12T23:09:15+00:00",
+      "summary": "...",
+      "words": 1626,
+      "minutes": 10,
+      "full_text_in_feed": true,
+      "score": 9.6,
+      "matched": [
+        "alignment",
+        "anthropic",
+        "openai",
+        "jobs"
+      ],
+      "done": true
+    },
+    {
+      "url": "https://www.exponentialview.co/p/what-anthropic-is-really-listing",
+      "title": "🔮 What Anthropic is really listing",
+      "source": "Exponential View",
+      "author": "Azeem Azhar",
+      "published": "2026-11-16T16:36:16+00:00",
+      "summary": "Tithes, not tokens",
+      "words": 421,
+      "minutes": 3,
+      "full_text_in_feed": true,
+      "score": 9.4,
+      "matched": [
+        "anthropic"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/11/16/1146070/building-ai-that-can-work-across-the-enterprise",
+      "title": "Building AI that can work across the enterprise",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "MIT Technology Review Insights",
+      "published": "2026-11-16T13:00:00+00:00",
+      "summary": "For years, enterprises have approached AI as a series of discrete experiments. Now, as AI agents begin to move into the workflows that run the business, that model is starting to look inadequate. Organizations moving from isolated pilots toward AI agents and…",
+      "words": 5678,
+      "minutes": 35,
+      "full_text_in_feed": true,
+      "score": 9.4,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "economics",
+        "reasoning"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns",
+      "title": "OpenAI board member worries an AI \"takeover\" of society could be months away",
+      "source": "AI - Ars Technica",
+      "author": "Kyle Orland",
+      "published": "2026-11-13T17:25:45+00:00",
+      "summary": "Researcher traces a path from AI reward hacking to potential human extinction.",
+      "words": 192,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": 9.0,
+      "matched": [
+        "alignment",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://garymarcus.substack.com/p/wake-up-americas-infrastructure-is",
+      "title": "Wake up! America’s infrastructure is melting. And AI appears to be partly responsible.",
+      "source": "Marcus on AI",
+      "author": "Gary Marcus",
+      "published": "2026-11-17T14:21:39+00:00",
+      "summary": "Hundreds of companies have been hit. Shit is getting very real.",
+      "words": 539,
+      "minutes": 3,
+      "full_text_in_feed": true,
+      "score": 7.9,
+      "matched": [
+        "agents",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/11/16/1148565/building-trustworthy-ai-by-fencing-it-in-not-predicting-it",
+      "title": "Building trustworthy AI by fencing it in, not predicting it",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "Sudhi Sinha",
+      "published": "2026-11-16T16:04:28+00:00",
+      "summary": "In October this year, OpenAI disclosed that two of its AI agents had switched off the systems built to monitor them. One muted its own safety alerts after misreading an instruction not to send messages; the other removed its monitoring integration during…",
+      "words": 996,
+      "minutes": 6,
+      "full_text_in_feed": true,
+      "score": 7.4,
+      "matched": [
+        "agents",
+        "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.exponentialview.co/p/ev-610",
+      "title": "🔮 The $22 billion question about AI self-improvement #610",
+      "source": "Exponential View",
+      "author": "Azeem Azhar",
+      "published": "2026-11-15T04:47:29+00:00",
+      "summary": "Plus: Cheap solar, who pays for Claude & DNA immunotherapy++",
+      "words": 531,
+      "minutes": 3,
+      "full_text_in_feed": true,
+      "score": 5.7,
+      "matched": [
+        "agents",
+        "claude",
+        "jobs"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://simonwillison.net/2026/Nov/17/datasette-lite",
+      "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+      "source": "Simon Willison's Weblog: Entries",
+      "author": "",
+      "published": "2026-11-17T16:48:33+00:00",
+      "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide . I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real…",
+      "words": 1600,
+      "minutes": 10,
+      "full_text_in_feed": true,
+      "score": 3.9,
+      "matched": [
+        "claude"
+      ],
+      "done": false
+    }
+  ]
+}

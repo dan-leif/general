@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Listen Later</title>
+    <link>https://dan-leif.github.io/general/listen/</link>
+    <atom:link href="https://dan-leif.github.io/general/listen/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Articles I picked, read aloud. Private feed - please don&#x27;t share.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Nov 2026 19:48:47 +0000</lastBuildDate>
+    <itunes:author>Listen Later</itunes:author>
+    <itunes:image href="https://dan-leif.github.io/general/listen/cover.png"/>
+    <image><url>https://dan-leif.github.io/general/listen/cover.png</url><title>Listen Later</title><link>https://dan-leif.github.io/general/listen/</link></image>
+    <itunes:category text="Technology"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:block>Yes</itunes:block>
+    <item>
+      <title>AI Company Employees Should Unionize</title>
+      <description>...
+
+Original: https://www.astralcodexten.com/p/ai-company-employees-should-unionize</description>
+      <itunes:subtitle>Scott Alexander · Astral Codex Ten</itunes:subtitle>
+      <link>https://www.astralcodexten.com/p/ai-company-employees-should-unionize</link>
+      <guid isPermaLink="false">20261117-ai-company-employees-should-unionize</guid>
+      <pubDate>Tue, 17 Nov 2026 19:42:04 +0000</pubDate>
+      <enclosure url="https://dan-leif.github.io/general/listen/audio/20261117-ai-company-employees-should-unionize.mp3" length="3494592" type="audio/mpeg"/>
+      <itunes:duration>00:09:42</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>

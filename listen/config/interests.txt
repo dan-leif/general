@@ -1,0 +1,28 @@
+# What you want to hear about. The daily picker scores each article with these.
+#
+#   + phrase   weight     -> boosts articles that mention it (title counts 3x)
+#   - phrase   weight     -> pushes articles down
+#   ! phrase              -> hides articles whose TITLE contains it
+#
+# This is a starter list -- replace it with your real interests.
+
++ AI safety            3
++ alignment            3
++ agents               2
++ Claude               2
++ Anthropic            2
++ OpenAI               2
++ frontier model       2
++ AI policy            2
++ regulation           1
++ economics            1
++ jobs                 1
++ reasoning            1
++ open source          1
+
+- podcast              1
+- sponsored            3
+
+! Open Thread
+! Links for
+! Meetups Everywhere
