@@ -1,29 +1,12 @@
 {
-  "generated": "2026-11-17T19:31+00:00",
+  "generated": "2026-11-18T00:00+00:00",
   "feeds_checked": 14,
-  "errors": [],
+  "errors": [
+    "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
+    "https://thezvi.substack.com/feed: HTTP Error 403: Forbidden",
+    "https://garymarcus.substack.com/feed: HTTP Error 403: Forbidden"
+  ],
   "items": [
-    {
-      "url": "https://thezvi.substack.com/p/ai-194-spy-versus-guy",
-      "title": "AI #194: Spy Versus Guy",
-      "source": "Don't Worry About the Vase",
-      "author": "Zvi Mowshowitz",
-      "published": "2026-11-12T14:31:34+00:00",
-      "summary": "Tomorrow I head to Washington DC for a conference called The Takeoff.",
-      "words": 12956,
-      "minutes": 81,
-      "full_text_in_feed": true,
-      "score": 29.4,
-      "matched": [
-        "ai safety",
-        "alignment",
-        "agents",
-        "claude",
-        "anthropic",
-        "openai"
-      ],
-      "done": false
-    },
     {
       "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026",
       "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
@@ -34,7 +17,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 25.8,
+      "score": 25.7,
       "matched": [
         "alignment",
         "agents",
@@ -55,7 +38,7 @@
       "words": 6469,
       "minutes": 40,
       "full_text_in_feed": true,
-      "score": 24.8,
+      "score": 24.7,
       "matched": [
         "ai safety",
         "alignment",
@@ -76,7 +59,7 @@
       "words": 5902,
       "minutes": 37,
       "full_text_in_feed": true,
-      "score": 21.2,
+      "score": 21.1,
       "matched": [
         "alignment",
         "agents",
@@ -84,47 +67,6 @@
         "anthropic",
         "openai",
         "frontier model"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://thezvi.substack.com/p/fable-52-is-the-new-bazooka",
-      "title": "Fable 5.2 is the New Bazooka",
-      "source": "Don't Worry About the Vase",
-      "author": "Zvi Mowshowitz",
-      "published": "2026-11-16T20:27:14+00:00",
-      "summary": "You do not always want a bazooka.",
-      "words": 5380,
-      "minutes": 34,
-      "full_text_in_feed": true,
-      "score": 19.5,
-      "matched": [
-        "alignment",
-        "agents",
-        "claude",
-        "anthropic",
-        "openai",
-        "reasoning"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
-      "title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
-      "source": "Import AI",
-      "author": "Jack Clark",
-      "published": "2026-11-16T14:01:15+00:00",
-      "summary": "Plus: CucumberVision!",
-      "words": 2711,
-      "minutes": 17,
-      "full_text_in_feed": true,
-      "score": 19.4,
-      "matched": [
-        "alignment",
-        "agents",
-        "claude",
-        "frontier model",
-        "reasoning"
       ],
       "done": false
     },
@@ -138,30 +80,10 @@
       "words": 141,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 17.0,
+      "score": 16.9,
       "matched": [
         "anthropic",
         "openai"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://thezvi.substack.com/p/fable-and-mythos-52-the-system-card",
-      "title": "Fable and Mythos 5.2: The System Card",
-      "source": "Don't Worry About the Vase",
-      "author": "Zvi Mowshowitz",
-      "published": "2026-11-11T16:25:17+00:00",
-      "summary": "It’s that time again: Introducing the world’s most powerful model, Claude Mythos 5.2.",
-      "words": 7622,
-      "minutes": 48,
-      "full_text_in_feed": true,
-      "score": 16.9,
-      "matched": [
-        "alignment",
-        "agents",
-        "claude",
-        "anthropic",
-        "reasoning"
       ],
       "done": false
     },
@@ -175,7 +97,7 @@
       "words": 3965,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 13.9,
+      "score": 13.8,
       "matched": [
         "agents",
         "claude",
@@ -195,7 +117,7 @@
       "words": 739,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 11.5,
+      "score": 11.4,
       "matched": [
         "claude",
         "anthropic",
@@ -214,32 +136,13 @@
       "words": 1477,
       "minutes": 9,
       "full_text_in_feed": true,
-      "score": 11.4,
+      "score": 11.3,
       "matched": [
         "ai safety",
         "anthropic",
         "openai",
         "regulation",
         "open source"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://garymarcus.substack.com/p/the-great-generative-ai-unraveling",
-      "title": "The great Generative AI unraveling",
-      "source": "Marcus on AI",
-      "author": "Gary Marcus",
-      "published": "2026-11-13T18:26:49+00:00",
-      "summary": "Things are starting to fall apart",
-      "words": 789,
-      "minutes": 5,
-      "full_text_in_feed": true,
-      "score": 10.0,
-      "matched": [
-        "claude",
-        "anthropic",
-        "openai",
-        "economics"
       ],
       "done": false
     },
@@ -253,7 +156,7 @@
       "words": 1626,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 9.6,
+      "score": 9.5,
       "matched": [
         "alignment",
         "anthropic",
@@ -272,7 +175,7 @@
       "words": 421,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 9.4,
+      "score": 9.3,
       "matched": [
         "anthropic"
       ],
@@ -288,7 +191,7 @@
       "words": 5678,
       "minutes": 35,
       "full_text_in_feed": true,
-      "score": 9.4,
+      "score": 9.3,
       "matched": [
         "agents",
         "claude",
@@ -308,26 +211,9 @@
       "words": 192,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 9.0,
+      "score": 8.9,
       "matched": [
         "alignment",
-        "openai"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://garymarcus.substack.com/p/wake-up-americas-infrastructure-is",
-      "title": "Wake up! America’s infrastructure is melting. And AI appears to be partly responsible.",
-      "source": "Marcus on AI",
-      "author": "Gary Marcus",
-      "published": "2026-11-17T14:21:39+00:00",
-      "summary": "Hundreds of companies have been hit. Shit is getting very real.",
-      "words": 539,
-      "minutes": 3,
-      "full_text_in_feed": true,
-      "score": 7.9,
-      "matched": [
-        "agents",
         "openai"
       ],
       "done": false
@@ -342,7 +228,7 @@
       "words": 996,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 7.4,
+      "score": 7.3,
       "matched": [
         "agents",
         "openai"
@@ -359,7 +245,7 @@
       "words": 531,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 5.7,
+      "score": 5.6,
       "matched": [
         "agents",
         "claude",
@@ -377,10 +263,71 @@
       "words": 1600,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 3.9,
+      "score": 3.8,
       "matched": [
         "claude"
       ],
+      "done": false
+    },
+    {
+      "url": "https://www.exponentialview.co/p/jensen-huang-and-the-future-of-the",
+      "title": "🔥 Jensen Huang and the future of the AI boom",
+      "source": "Exponential View",
+      "author": "Azeem Azhar",
+      "published": "2026-11-12T16:19:28+00:00",
+      "summary": "Good news for some, not so good news for others",
+      "words": 615,
+      "minutes": 4,
+      "full_text_in_feed": true,
+      "score": 3.3,
+      "matched": [
+        "anthropic",
+        "jobs"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it",
+      "title": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+      "source": "AI - Ars Technica",
+      "author": "Dan Goodin",
+      "published": "2026-11-17T14:00:29+00:00",
+      "summary": "AI agent takes unapproved actions even when laptop lid is closed and told not to.",
+      "words": 281,
+      "minutes": 2,
+      "full_text_in_feed": false,
+      "score": 1.8,
+      "matched": [
+        "agents"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.astralcodexten.com/p/vote-in-the-2026-book-review-contest",
+      "title": "Vote In The 2026 Book Review Contest",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-14T00:23:27+00:00",
+      "summary": "...",
+      "words": 152,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": -2.0,
+      "matched": [],
+      "done": false
+    },
+    {
+      "url": "https://www.astralcodexten.com/p/escaping-the-outside-criticism-trap",
+      "title": "Escaping The “Outside Criticism” Trap",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-11T07:12:01+00:00",
+      "summary": "...",
+      "words": 1817,
+      "minutes": 11,
+      "full_text_in_feed": true,
+      "score": -3.4,
+      "matched": [],
       "done": false
     }
   ]
