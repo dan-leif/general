@@ -1,11 +1,14 @@
 # One feed URL per line. Anything after "#" is ignored.
 # Every Substack has a feed at https://<name>.substack.com/feed (or <custom-domain>/feed).
+# NOTE: Substack refuses requests from GitHub's servers for *.substack.com addresses
+# (403 Forbidden). Substacks on their own domain (e.g. oneusefulthing.org) work fine.
+# For a *.substack.com writer, look for a mirror they publish elsewhere.
 
-https://importai.substack.com/feed            # Import AI (Jack Clark)
+https://jack-clark.net/feed/                  # Import AI (Jack Clark) - author's own mirror
 https://www.oneusefulthing.org/feed           # One Useful Thing (Ethan Mollick)
 https://www.interconnects.ai/feed             # Interconnects (Nathan Lambert)
-https://thezvi.substack.com/feed              # Don't Worry About the Vase (Zvi)
-https://garymarcus.substack.com/feed          # Marcus on AI
+https://thezvi.wordpress.com/feed/            # Don't Worry About the Vase (Zvi) - author's own mirror
+https://garymarcus.substack.com/feed          # Marcus on AI (blocked from GitHub's servers - see note)
 https://www.latent.space/feed                 # Latent Space
 https://www.understandingai.org/feed          # Understanding AI (Timothy B. Lee)
 https://www.hyperdimensional.co/feed          # Hyperdimensional (Dean Ball)
