@@ -6,13 +6,26 @@
     <atom:link href="https://dan-leif.github.io/general/listen/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Articles I picked, read aloud. Private feed - please don&#x27;t share.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2026 19:48:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 00:07:03 +0000</lastBuildDate>
     <itunes:author>Listen Later</itunes:author>
     <itunes:image href="https://dan-leif.github.io/general/listen/cover.png"/>
     <image><url>https://dan-leif.github.io/general/listen/cover.png</url><title>Listen Later</title><link>https://dan-leif.github.io/general/listen/</link></image>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
+    <item>
+      <title>🔮 What Anthropic is really listing</title>
+      <description>Tithes, not tokens
+
+Original: https://www.exponentialview.co/p/what-anthropic-is-really-listing</description>
+      <itunes:subtitle>Azeem Azhar · Exponential View</itunes:subtitle>
+      <link>https://www.exponentialview.co/p/what-anthropic-is-really-listing</link>
+      <guid isPermaLink="false">20261118-what-anthropic-is-really-listing</guid>
+      <pubDate>Wed, 18 Nov 2026 00:03:01 +0000</pubDate>
+      <enclosure url="https://dan-leif.github.io/general/listen/audio/20261118-what-anthropic-is-really-listing.mp3" length="957456" type="audio/mpeg"/>
+      <itunes:duration>00:02:39</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>AI Company Employees Should Unionize</title>
       <description>...
