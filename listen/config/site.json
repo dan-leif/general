@@ -1,0 +1,11 @@
+{
+  "base_url": "https://dan-leif.github.io/general/listen/",
+  "repo": "dan-leif/general",
+  "title": "Listen Later",
+  "description": "Articles I picked, read aloud. Private feed - please don't share.",
+  "voice": "en-US-AndrewNeural",
+  "max_candidates": 20,
+  "max_per_source": 3,
+  "lookback_days": 7,
+  "keep_episodes": 40
+}

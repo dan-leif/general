@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Listen Later</title>
+  <link rel="icon" href="cover.png" />
+  <link rel="apple-touch-icon" href="cover.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --card: #161b22; --card-on: #142033; --border: #21262d;
+      --text: #e6edf3; --muted: #8b949e; --faint: #6e7681;
+      --accent: #58a6ff; --accent-strong: #1f6feb; --ok: #3fb950; --warn: #d29922;
+    }
+    body {
+      min-height: 100vh; background: var(--bg); color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.5; padding: 28px 16px 120px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    header img { width: 48px; height: 48px; border-radius: 12px; }
+    h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); font-size: 14px; }
+    nav { display: flex; gap: 6px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
+    nav button {
+      background: none; border: none; color: var(--muted); font: inherit; font-weight: 600;
+      padding: 10px 12px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    }
+    nav button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); }
+    nav .count { color: var(--faint); font-weight: 500; }
+    section[hidden] { display: none; }
+
+    .card {
+      display: flex; gap: 14px; background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .card:hover { border-color: #30363d; }
+    .card.on { border-color: var(--accent); background: var(--card-on); }
+    .card.done { cursor: default; opacity: .6; }
+    .card input { width: 22px; height: 22px; flex: none; margin-top: 2px; accent-color: var(--accent); cursor: pointer; }
+    .meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+    .meta .src { color: var(--accent); font-weight: 600; }
+    .title { font-weight: 700; font-size: 16px; margin: 2px 0 4px; }
+    .title a { color: var(--text); text-decoration: none; }
+    .title a:hover { text-decoration: underline; }
+    .summary { color: #c9d1d9; font-size: 14px; overflow-wrap: anywhere; }
+    .badge { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 99px; border: 1px solid; }
+    .badge.ok { color: var(--ok); border-color: #238636; }
+    .badge.req { color: var(--warn); border-color: #9e6a03; }
+
+    .add { display: flex; gap: 8px; margin: 18px 0 8px; }
+    .add input {
+      flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--border); color: var(--text);
+      border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 14px;
+    }
+    .btn {
+      background: var(--accent-strong); color: #fff; border: none; border-radius: 10px; padding: 10px 16px;
+      font: inherit; font-weight: 700; cursor: pointer; white-space: nowrap;
+    }
+    .btn.ghost { background: #21262d; color: var(--text); }
+    .btn:disabled { opacity: .45; cursor: default; }
+    .extra { list-style: none; }
+    .extra li { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); padding: 4px 0; overflow-wrap: anywhere; }
+    .extra button { background: none; border: none; color: var(--faint); cursor: pointer; font-size: 18px; }
+
+    .bar {
+      position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(13,17,23,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--border);
+    }
+    .bar .wrap { display: flex; align-items: center; gap: 12px; }
+    .bar .hint { color: var(--muted); font-size: 13px; flex: 1; }
+
+    .ep { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+    .ep audio { width: 100%; margin-top: 10px; height: 40px; }
+    .empty { color: var(--muted); padding: 30px 0; text-align: center; }
+
+    .setup h2 { font-size: 17px; margin: 22px 0 8px; }
+    .setup p, .setup li { color: #c9d1d9; font-size: 15px; }
+    .setup ol { padding-left: 22px; }
+    .setup li { margin-bottom: 6px; }
+    .setup a { color: var(--accent); }
+    .copy { display: flex; gap: 8px; margin: 8px 0; }
+    .copy code {
+      flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 12px; font-size: 13px; overflow-x: auto; white-space: nowrap;
+    }
+    .note { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="cover.png" alt="" />
+      <div>
+        <h1>Listen Later</h1>
+        <div class="sub" id="updated">Loading…</div>
+      </div>
+    </header>
+
+    <nav role="tablist">
+      <button role="tab" data-tab="picks" aria-selected="true">Picks <span class="count" id="nPicks"></span></button>
+      <button role="tab" data-tab="ready" aria-selected="false">Ready <span class="count" id="nReady"></span></button>
+      <button role="tab" data-tab="setup" aria-selected="false">Setup</button>
+    </nav>
+
+    <section id="picks">
+      <div id="pickList"></div>
+      <div class="add">
+        <input id="addUrl" type="url" placeholder="Paste any article link…" inputmode="url" />
+        <button class="btn ghost" id="addBtn">Add</button>
+      </div>
+      <ul class="extra" id="extraList"></ul>
+    </section>
+
+    <section id="ready" hidden>
+      <div id="epList"></div>
+    </section>
+
+    <section id="setup" class="setup" hidden>
+      <h2>Listen in YouTube Music (or any podcast app)</h2>
+      <p>Your audio is published as a private podcast. Add this feed once:</p>
+      <div class="copy"><code id="feedUrl"></code><button class="btn ghost" id="copyBtn">Copy</button></div>
+      <ol>
+        <li>Open <strong>YouTube Music</strong> → <strong>Library</strong> → <strong>Podcasts</strong>.</li>
+        <li>Choose <strong>Add podcast</strong> / <strong>Add RSS feed</strong> (the wording varies by app version; on a computer it's at music.youtube.com) and paste the link.</li>
+        <li>Download episodes for offline listening. Headset buttons, the lock screen and casting to a Google Home / Nest speaker then work like any podcast.</li>
+      </ol>
+      <p class="note">New episodes can take a while to show up in YouTube Music, because it re-checks feeds on its own schedule. The <em>Ready</em> tab here always has them right away.</p>
+
+      <h2>How it works</h2>
+      <ol>
+        <li>Every morning a GitHub Action reads your feeds and ranks articles by your interests.</li>
+        <li>Tick articles and press <strong>Make audio</strong>. GitHub opens a pre-filled request; press <strong>Create</strong>.</li>
+        <li>A second Action reads the articles aloud with a free voice and adds them to your feed. It usually takes a few minutes, longer for very long posts. You'll get a GitHub notification when they're ready.</li>
+      </ol>
+
+      <h2>Teach it</h2>
+      <p>Edit <a id="interestsLink" target="_blank" rel="noopener">your interests</a> (topics to boost, bury or hide) and <a id="feedsLink" target="_blank" rel="noopener">your feeds</a> (any Substack or site with RSS). Changes apply from the next morning's picks.</p>
+      <p class="note">The repo is public, so these pages and files can be seen by anyone who finds them. Don't share the feed link.</p>
+    </section>
+  </div>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="hint" id="hint">Tick what you'd like to hear.</div>
+      <button class="btn" id="makeBtn" disabled>Make audio</button>
+    </div>
+  </div>
+
+  <script>
+    const REPO = "dan-leif/general";
+    const BRANCH = "master";
+    const BASE = new URL(".", location.href).href;
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    // Browser storage is only a convenience (remembers what you already requested).
+    const store = {
+      get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+      set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    };
+
+    let picks = [], episodes = [];
+    const chosen = new Map();        // url -> title
+    const extras = [];               // pasted URLs
+    const requested = new Set(store.get("ll-requested", []));
+
+    function ago(iso) {
+      const d = (Date.now() - new Date(iso)) / 86400000;
+      if (d < 1) return "today";
+      if (d < 2) return "yesterday";
+      return Math.floor(d) + " days ago";
+    }
+    const mins = (s) => Math.max(1, Math.round(s / 60)) + " min";
+
+    function renderPicks() {
+      const ready = new Set(episodes.map((e) => e.source_url));
+      $("nPicks").textContent = picks.length ? picks.length : "";
+      $("pickList").innerHTML = picks.length ? picks.map((p, i) => {
+        const done = p.done || ready.has(p.url);
+        const req = !done && requested.has(p.url);
+        const on = chosen.has(p.url);
+        return `<label class="card${on ? " on" : ""}${done ? " done" : ""}" data-i="${i}">
+          <input type="checkbox" ${on ? "checked" : ""} ${done ? "disabled" : ""} aria-label="Choose ${esc(p.title)}" />
+          <div>
+            <div class="meta">
+              <span class="src">${esc(p.source)}</span>
+              <span>${ago(p.published)}</span>
+              <span>~${p.minutes} min listen</span>
+              ${done ? '<span class="badge ok">✓ in feed</span>' : ""}
+              ${req ? '<span class="badge req">requested</span>' : ""}
+            </div>
+            <div class="title"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></div>
+            <div class="summary">${esc(p.summary)}</div>
+          </div>
+        </label>`;
+      }).join("") : '<div class="empty">No picks yet. They arrive each morning.</div>';
+    }
+
+    function renderExtras() {
+      $("extraList").innerHTML = extras.map((u, i) =>
+        `<li><span>＋</span><span style="flex:1">${esc(u)}</span><button data-x="${i}" aria-label="Remove">×</button></li>`).join("");
+      updateBar();
+    }
+
+    function renderEpisodes() {
+      $("nReady").textContent = episodes.length ? episodes.length : "";
+      $("epList").innerHTML = episodes.length ? episodes.map((e) => `
+        <div class="ep">
+          <div class="meta"><span class="src">${esc(e.source || "")}</span><span>${mins(e.seconds)}</span><span>${ago(e.created)}</span></div>
+          <div class="title"><a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(e.title)}</a></div>
+          <audio controls preload="none" src="${esc(e.file)}"></audio>
+        </div>`).join("") : '<div class="empty">Nothing here yet. Pick something to listen to.</div>';
+    }
+
+    function updateBar() {
+      const n = chosen.size + extras.length;
+      $("makeBtn").disabled = n === 0;
+      $("makeBtn").textContent = n ? `Make audio (${n})` : "Make audio";
+      $("hint").textContent = n ? "Opens GitHub. Press Create to start." : "Tick what you'd like to hear.";
+    }
+
+    $("pickList").addEventListener("change", (ev) => {
+      const card = ev.target.closest(".card");
+      const p = picks[card.dataset.i];
+      ev.target.checked ? chosen.set(p.url, p.title) : chosen.delete(p.url);
+      card.classList.toggle("on", ev.target.checked);
+      updateBar();
+    });
+
+    function addExtra() {
+      const v = $("addUrl").value.trim();
+      if (!/^https?:\/\/\S+$/.test(v)) { $("addUrl").focus(); return; }
+      if (!extras.includes(v)) extras.push(v);
+      $("addUrl").value = "";
+      renderExtras();
+    }
+    $("addBtn").onclick = addExtra;
+    $("addUrl").addEventListener("keydown", (e) => { if (e.key === "Enter") addExtra(); });
+    $("extraList").addEventListener("click", (e) => {
+      if (e.target.dataset.x !== undefined) { extras.splice(+e.target.dataset.x, 1); renderExtras(); }
+    });
+
+    $("makeBtn").onclick = () => {
+      const items = [...chosen].map(([url, title]) => ({ url, title })).concat(extras.map((url) => ({ url, title: url })));
+      if (!items.length) return;
+      const first = items[0].title.length > 60 ? items[0].title.slice(0, 57) + "…" : items[0].title;
+      const title = `Listen: ${first}${items.length > 1 ? ` (+${items.length - 1} more)` : ""}`;
+      const body = items.map((it) => `- ${it.title === it.url ? "" : it.title + "\n  "}${it.url}`).join("\n") +
+        "\n\n_Sent from Listen Later. Press **Create** and the audio will be made automatically._";
+      const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      items.forEach((it) => requested.add(it.url));
+      store.set("ll-requested", [...requested].slice(-200));
+      chosen.clear(); extras.length = 0;
+      renderPicks(); renderExtras();
+      window.open(url, "_blank", "noopener");
+    };
+
+    document.querySelectorAll("nav button").forEach((b) => b.onclick = () => {
+      document.querySelectorAll("nav button").forEach((x) => x.setAttribute("aria-selected", x === b));
+      document.querySelectorAll("section").forEach((s) => s.hidden = s.id !== b.dataset.tab);
+      store.set("ll-tab", b.dataset.tab);
+    });
+    const lastTab = store.get("ll-tab", "picks");
+    document.querySelector(`nav button[data-tab="${lastTab}"]`)?.click();
+
+    $("feedUrl").textContent = BASE + "feed.xml";
+    $("copyBtn").onclick = async () => {
+      try { await navigator.clipboard.writeText(BASE + "feed.xml"); $("copyBtn").textContent = "Copied"; }
+      catch { $("copyBtn").textContent = "Select & copy"; }
+      setTimeout(() => $("copyBtn").textContent = "Copy", 2000);
+    };
+    $("interestsLink").href = `https://github.com/${REPO}/edit/${BRANCH}/listen/config/interests.txt`;
+    $("feedsLink").href = `https://github.com/${REPO}/edit/${BRANCH}/listen/config/feeds.txt`;
+
+    async function load(name, fallback) {
+      try {
+        const r = await fetch(`${name}?t=${Date.now()}`, { cache: "no-store" });
+        return r.ok ? await r.json() : fallback;
+      } catch { return fallback; }
+    }
+    (async () => {
+      const [cand, eps] = await Promise.all([load("candidates.json", {}), load("episodes.json", [])]);
+      picks = cand.items || [];
+      episodes = eps;
+      $("updated").textContent = cand.generated
+        ? `Picks updated ${ago(cand.generated)} · ${cand.feeds_checked} feeds checked`
+        : "No picks yet";
+      renderPicks(); renderEpisodes(); updateBar();
+    })();
+  </script>
+</body>
+</html>

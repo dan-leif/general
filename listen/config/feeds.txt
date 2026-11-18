@@ -1,0 +1,17 @@
+# One feed URL per line. Anything after "#" is ignored.
+# Every Substack has a feed at https://<name>.substack.com/feed (or <custom-domain>/feed).
+
+https://importai.substack.com/feed            # Import AI (Jack Clark)
+https://www.oneusefulthing.org/feed           # One Useful Thing (Ethan Mollick)
+https://www.interconnects.ai/feed             # Interconnects (Nathan Lambert)
+https://thezvi.substack.com/feed              # Don't Worry About the Vase (Zvi)
+https://garymarcus.substack.com/feed          # Marcus on AI
+https://www.latent.space/feed                 # Latent Space
+https://www.understandingai.org/feed          # Understanding AI (Timothy B. Lee)
+https://www.hyperdimensional.co/feed          # Hyperdimensional (Dean Ball)
+https://www.normaltech.ai/feed                # AI as Normal Technology
+https://www.exponentialview.co/feed           # Exponential View
+https://www.astralcodexten.com/feed           # Astral Codex Ten
+https://simonwillison.net/atom/entries/       # Simon Willison (long-form entries only)
+https://www.technologyreview.com/topic/artificial-intelligence/feed   # MIT Technology Review - AI
+https://arstechnica.com/ai/feed/              # Ars Technica - AI
