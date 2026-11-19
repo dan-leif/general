@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18T18:54+00:00",
+  "generated": "2026-11-19T19:02+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 25.3,
+      "score": 24.8,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +38,7 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 21.8,
+      "score": 21.3,
       "matched": [
         "agents",
         "claude",
@@ -49,23 +49,23 @@
       "done": false
     },
     {
-      "url": "https://latent.space/p/ainews-d-day-decision-models-day",
-      "title": "[AINews] D-Day (Decision Models Day)",
+      "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia",
+      "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
       "source": "Latent Space",
       "author": "swyx .ai",
-      "published": "2026-11-12T05:26:54+00:00",
-      "summary": "November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers.",
-      "words": 5902,
-      "minutes": 37,
+      "published": "2026-11-13T09:04:13+00:00",
+      "summary": "November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership?",
+      "words": 5837,
+      "minutes": 36,
       "full_text_in_feed": true,
-      "score": 20.7,
+      "score": 17.8,
       "matched": [
-        "alignment",
         "agents",
         "claude",
         "anthropic",
         "openai",
-        "frontier model"
+        "economics",
+        "reasoning"
       ],
       "done": false
     },
@@ -79,7 +79,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 16.0,
+      "score": 15.5,
       "matched": [
         "ai safety",
         "alignment",
@@ -91,16 +91,36 @@
       "done": false
     },
     {
+      "url": "https://www.understandingai.org/p/19-charts-that-explain-the-state",
+      "title": "19 charts that explain the state of AI",
+      "source": "Understanding AI",
+      "author": "Kai Williams",
+      "published": "2026-11-18T21:34:00+00:00",
+      "summary": "The AI boom is getting a little crazy.",
+      "words": 1646,
+      "minutes": 10,
+      "full_text_in_feed": true,
+      "score": 14.6,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "regulation"
+      ],
+      "done": false
+    },
+    {
       "url": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts",
       "title": "I spoke to seven physics experts grappling with the AI revolution",
       "source": "Understanding AI",
       "author": "Dan Kagan-Kans",
       "published": "2026-11-17T14:51:56+00:00",
       "summary": "AI can now do the calculations. What’s left for theoretical physicists?",
-      "words": 3965,
+      "words": 3976,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 13.4,
+      "score": 12.9,
       "matched": [
         "agents",
         "claude",
@@ -120,7 +140,7 @@
       "words": 739,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 11.0,
+      "score": 10.5,
       "matched": [
         "claude",
         "anthropic",
@@ -139,7 +159,7 @@
       "words": 1477,
       "minutes": 9,
       "full_text_in_feed": true,
-      "score": 10.9,
+      "score": 10.4,
       "matched": [
         "ai safety",
         "anthropic",
@@ -159,7 +179,7 @@
       "words": 1626,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 9.1,
+      "score": 8.6,
       "matched": [
         "alignment",
         "anthropic",
@@ -178,7 +198,7 @@
       "words": 421,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 9.0,
+      "score": 8.4,
       "matched": [
         "anthropic"
       ],
@@ -194,7 +214,7 @@
       "words": 5678,
       "minutes": 35,
       "full_text_in_feed": true,
-      "score": 8.9,
+      "score": 8.4,
       "matched": [
         "agents",
         "claude",
@@ -214,7 +234,7 @@
       "words": 192,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 8.5,
+      "score": 8.0,
       "matched": [
         "alignment",
         "openai"
@@ -231,7 +251,7 @@
       "words": 996,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 6.9,
+      "score": 6.4,
       "matched": [
         "agents",
         "openai"
@@ -248,7 +268,7 @@
       "words": 531,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 5.2,
+      "score": 4.7,
       "matched": [
         "agents",
         "claude",
@@ -266,26 +286,9 @@
       "words": 1600,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 3.5,
+      "score": 3.0,
       "matched": [
         "claude"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.exponentialview.co/p/jensen-huang-and-the-future-of-the",
-      "title": "🔥 Jensen Huang and the future of the AI boom",
-      "source": "Exponential View",
-      "author": "Azeem Azhar",
-      "published": "2026-11-12T16:19:28+00:00",
-      "summary": "Good news for some, not so good news for others",
-      "words": 615,
-      "minutes": 4,
-      "full_text_in_feed": true,
-      "score": 2.9,
-      "matched": [
-        "anthropic",
-        "jobs"
       ],
       "done": false
     },
@@ -299,7 +302,7 @@
       "words": 145,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 1.6,
+      "score": 1.1,
       "matched": [
         "agents"
       ],
@@ -315,7 +318,7 @@
       "words": 281,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 1.4,
+      "score": 0.9,
       "matched": [
         "agents"
       ],
@@ -328,11 +331,27 @@
       "author": "Scott Alexander",
       "published": "2026-11-18T07:47:03+00:00",
       "summary": "...",
-      "words": 1589,
+      "words": 1586,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": -0.2,
+      "score": -0.7,
       "matched": [],
+      "done": false
+    },
+    {
+      "url": "https://www.exponentialview.co/p/what-does-it-cost-to-make-a-worker",
+      "title": "🔮 What does it cost to make a worker?",
+      "source": "Exponential View",
+      "author": "Azeem Azhar",
+      "published": "2026-11-14T07:27:27+00:00",
+      "summary": "Some early sketches of the economics of manufactured intelligence",
+      "words": 253,
+      "minutes": 2,
+      "full_text_in_feed": false,
+      "score": -1.7,
+      "matched": [
+        "economics"
+      ],
       "done": false
     },
     {
@@ -345,7 +364,7 @@
       "words": 152,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -2.4,
+      "score": -2.9,
       "matched": [],
       "done": false
     }
