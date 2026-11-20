@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19T19:02+00:00",
+  "generated": "2026-11-20T18:39+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -7,6 +7,27 @@
     "https://garymarcus.substack.com/feed: HTTP Error 403: Forbidden"
   ],
   "items": [
+    {
+      "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t",
+      "title": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
+      "source": "Latent Space",
+      "author": "swyx .ai",
+      "published": "2026-11-20T07:12:24+00:00",
+      "summary": "November 19, 2026 — ANT went from $83 at pricing to $111.50 at the open and $97.17 at the close. Plus, Google opens Genie 4 to developers.",
+      "words": 7346,
+      "minutes": 46,
+      "full_text_in_feed": true,
+      "score": 29.8,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "frontier model"
+      ],
+      "done": false
+    },
     {
       "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026",
       "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
@@ -17,7 +38,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 24.8,
+      "score": 24.3,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +59,7 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 21.3,
+      "score": 20.8,
       "matched": [
         "agents",
         "claude",
@@ -49,22 +70,22 @@
       "done": false
     },
     {
-      "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia",
-      "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
-      "source": "Latent Space",
-      "author": "swyx .ai",
-      "published": "2026-11-13T09:04:13+00:00",
-      "summary": "November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership?",
-      "words": 5837,
-      "minutes": 36,
+      "url": "https://www.astralcodexten.com/p/the-ai-forecasting-agenda",
+      "title": "The AI Forecasting Agenda",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-19T20:29:45+00:00",
+      "summary": "...",
+      "words": 3717,
+      "minutes": 23,
       "full_text_in_feed": true,
-      "score": 17.8,
+      "score": 16.5,
       "matched": [
-        "agents",
+        "ai safety",
+        "alignment",
         "claude",
         "anthropic",
-        "openai",
-        "economics",
+        "ai policy",
         "reasoning"
       ],
       "done": false
@@ -79,7 +100,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 15.5,
+      "score": 15.0,
       "matched": [
         "ai safety",
         "alignment",
@@ -100,7 +121,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 14.6,
+      "score": 14.1,
       "matched": [
         "agents",
         "claude",
@@ -120,7 +141,7 @@
       "words": 3976,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 12.9,
+      "score": 12.4,
       "matched": [
         "agents",
         "claude",
@@ -140,7 +161,7 @@
       "words": 739,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 10.5,
+      "score": 10.0,
       "matched": [
         "claude",
         "anthropic",
@@ -159,7 +180,7 @@
       "words": 1477,
       "minutes": 9,
       "full_text_in_feed": true,
-      "score": 10.4,
+      "score": 9.9,
       "matched": [
         "ai safety",
         "anthropic",
@@ -168,25 +189,6 @@
         "open source"
       ],
       "done": false
-    },
-    {
-      "url": "https://www.astralcodexten.com/p/ai-company-employees-should-unionize",
-      "title": "AI Company Employees Should Unionize",
-      "source": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "published": "2026-11-12T23:09:15+00:00",
-      "summary": "...",
-      "words": 1626,
-      "minutes": 10,
-      "full_text_in_feed": true,
-      "score": 8.6,
-      "matched": [
-        "alignment",
-        "anthropic",
-        "openai",
-        "jobs"
-      ],
-      "done": true
     },
     {
       "url": "https://www.exponentialview.co/p/what-anthropic-is-really-listing",
@@ -198,7 +200,7 @@
       "words": 421,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 8.4,
+      "score": 8.0,
       "matched": [
         "anthropic"
       ],
@@ -214,7 +216,7 @@
       "words": 5678,
       "minutes": 35,
       "full_text_in_feed": true,
-      "score": 8.4,
+      "score": 7.9,
       "matched": [
         "agents",
         "claude",
@@ -225,35 +227,19 @@
       "done": false
     },
     {
-      "url": "https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns",
-      "title": "OpenAI board member worries an AI \"takeover\" of society could be months away",
-      "source": "AI - Ars Technica",
-      "author": "Kyle Orland",
-      "published": "2026-11-13T17:25:45+00:00",
-      "summary": "Researcher traces a path from AI reward hacking to potential human extinction.",
-      "words": 192,
-      "minutes": 1,
-      "full_text_in_feed": false,
-      "score": 8.0,
-      "matched": [
-        "alignment",
-        "openai"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.technologyreview.com/2026/11/16/1148565/building-trustworthy-ai-by-fencing-it-in-not-predicting-it",
-      "title": "Building trustworthy AI by fencing it in, not predicting it",
+      "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+      "title": "The most misunderstood graph in AI just got a major update",
       "source": "Artificial intelligence – MIT Technology Review",
-      "author": "Sudhi Sinha",
-      "published": "2026-11-16T16:04:28+00:00",
-      "summary": "In October this year, OpenAI disclosed that two of its AI agents had switched off the systems built to monitor them. One muted its own safety alerts after misreading an instruction not to send messages; the other removed its monitoring integration during…",
-      "words": 996,
-      "minutes": 6,
+      "author": "Grace Huckins",
+      "published": "2026-11-20T18:15:15+00:00",
+      "summary": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The…",
+      "words": 1342,
+      "minutes": 8,
       "full_text_in_feed": true,
-      "score": 6.4,
+      "score": 6.0,
       "matched": [
         "agents",
+        "anthropic",
         "openai"
       ],
       "done": false
@@ -268,7 +254,7 @@
       "words": 531,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 4.7,
+      "score": 4.2,
       "matched": [
         "agents",
         "claude",
@@ -283,10 +269,10 @@
       "author": "",
       "published": "2026-11-17T16:48:33+00:00",
       "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide . I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real…",
-      "words": 1600,
+      "words": 1585,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 3.0,
+      "score": 2.5,
       "matched": [
         "claude"
       ],
@@ -302,7 +288,7 @@
       "words": 145,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 1.1,
+      "score": 0.6,
       "matched": [
         "agents"
       ],
@@ -318,10 +304,24 @@
       "words": 281,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 0.9,
+      "score": 0.4,
       "matched": [
         "agents"
       ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert",
+      "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+      "source": "AI - Ars Technica",
+      "author": "Ashley Belanger",
+      "published": "2026-11-19T20:19:28+00:00",
+      "summary": "Lawsuit: Over 99% of school system’s AI gun alerts were false positives.",
+      "words": 135,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": -0.5,
+      "matched": [],
       "done": false
     },
     {
@@ -334,7 +334,7 @@
       "words": 1586,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": -0.7,
+      "score": -1.2,
       "matched": [],
       "done": false
     },
@@ -348,7 +348,7 @@
       "words": 253,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": -1.7,
+      "score": -2.2,
       "matched": [
         "economics"
       ],
@@ -364,7 +364,7 @@
       "words": 152,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -2.9,
+      "score": -3.4,
       "matched": [],
       "done": false
     }
