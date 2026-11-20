@@ -72,7 +72,7 @@ ul.plain b{color:var(--fg);font-weight:600}
 <div class="wrap">
   <header>
     <h1>AI lab departures over safety concerns, 2020–2026</h1>
-    <p class="lede">Employees who resigned where the person, or credible reporting, tied the exit to safety, responsibility or governance concerns. Counted by year of departure, through October 9, 2026. Every tab shares the same years and the same 0–10 scale. Firings are listed separately and not counted.</p>
+    <p class="lede">Employees who resigned where the person, or credible reporting, tied the exit to safety, responsibility or governance concerns. Counted by year of departure, through November 20, 2026. Every tab shares the same years and the same 0–10 scale. Firings are listed separately and not counted.</p>
   </header>
 
   <section class="panel" aria-label="Departures per year">
@@ -99,7 +99,7 @@ ul.plain b{color:var(--fg);font-weight:600}
   <section class="panel">
     <h2>Other labs</h2>
     <ul class="plain">
-      <li><b>Meta:</b> No qualifying resignations found. Its best-known whistleblowers (Sarah Wynn-Williams, Jason Sattizahn, Arturo Béjar) raised China-policy and child-safety concerns about Meta's platforms, not AI model safety.</li>
+      <li><b>Meta:</b> No qualifying resignations found. Its best-known whistleblowers (Sarah Wynn-Williams, Jason Sattizahn, Arturo Béjar) raised China-policy and child-safety concerns about Meta's platforms, not AI model safety. In Oct 2026 Meta let go of safety staff it had hired from Virtue AI four months earlier, citing clashing work styles; that was Meta's decision, not a resignation.</li>
       <li><b>Chinese labs:</b> No qualifying resignations found at DeepSeek, Zhipu, Moonshot or other Chinese labs, searching in English and Chinese. Public resignation letters criticizing an employer are rare there, so the absence says little.</li>
       <li><b>Open-model and other labs:</b> None found at Mistral, Hugging Face or Stability AI. At Microsoft, engineer Shane Jones went public in 2024 about Copilot Designer generating violent and sexual images, but stayed at the company.</li>
     </ul>
@@ -113,11 +113,11 @@ const LABS=["openai","anthropic","google","xai"];
 const DATA={
  openai:{
   name:"OpenAI",founded:2015,
-  note:"No qualifying resignations found 2022–2023 or with a stated reason in 2025. The 2024 spike follows the November 2023 board crisis and the May 2024 Superalignment team breakup.",
-  sources:"Main sources: Vox/Decoder on 2024 exits, Fortune on Adler, NYT/Ars Technica on Hitzig, Reuters on Kalinowski, WIRED on Achiam, The Atlantic and Business Insider on Robinson. The 2020–21 Anthropic founders' exact exit months are approximate.",
+  note:"No qualifying resignations found 2022–2023, and 2025 has only borderline cases. The 2024 spike follows the November 2023 board crisis and the May 2024 Superalignment team breakup.",
+  sources:"Main sources: Vox/Decoder on 2024 exits, Fortune on Adler, NYT/Ars Technica on Hitzig, Reuters on Kalinowski, WIRED on Achiam, The Atlantic and Business Insider on Robinson, WIRED and Gizmodo on Cunningham, WSJ and The Decoder on the Sep 2026 firings. The 2020–21 Anthropic founders' exact exit months are approximate.",
   excluded:[
-   ["Fired, not resigned:","Leopold Aschenbrenner and Pavel Izmailov (Apr 2024, alleged leaks); Ryan Beiermeister (early 2026, policy exec who opposed \"adult mode\"); three safety researchers (late Sep 2026, alleged info sharing with an outside safety group)."],
-   ["Left with no safety reason given:","Paul Christiano (2021, left to do alignment theory at ARC), Cullen O'Keefe (Apr 2024), Ryan Lowe (2024), Lilian Weng (Nov 2024), Johannes Heidecke (2026)."],
+   ["Fired, not resigned:","Leopold Aschenbrenner and Pavel Izmailov (Apr 2024, alleged leaks); Ryan Beiermeister (early 2026, policy exec who opposed \"adult mode\"); Jasmine Wang, Tomek Korbak and Mikita Balesni (late Sep 2026, alleged sharing of confidential information with an outside safety group)."],
+   ["Left with no safety reason given:","Paul Christiano (2021, left to do alignment theory at ARC), Cullen O'Keefe (Apr 2024), Ryan Lowe (2024), Lilian Weng (Nov 2024), Johannes Heidecke (2026). Carroll Wainwright, Jacob Hilton and Daniel Ziegler signed the June 2024 'Right to Warn' letter as former employees but gave no safety reason for their own exits."],
    ["Other causes:","Hieu Pham (Feb 2026, burnout); Suchir Balaji (2024, copyright concerns)."],
    ["Jacob Coxon:","worked at OpenAI 2023–2026, but his public safety-motivated resignation (Sep 2026) was from Anthropic. He's counted in the Anthropic tab."],
    ["Board, not staff:","Helen Toner and Tasha McCauley left the board in Nov 2023 after the failed Altman ouster."]
@@ -141,10 +141,11 @@ const DATA={
  {y:2024,t:"explicit",n:"Steven Adler",r:"Safety researcher",d:"Nov 2024 (announced Jan 2025)",w:"Called the AGI race a very risky gamble with huge downside and said he was frightened by the pace of AI development."},
  {y:2024,t:"explicit",n:"Rosie Campbell",r:"Policy frontiers / AGI Readiness",d:"Nov–Dec 2024",w:"Cited unsettling organizational shifts and warned current safety measures may be insufficient for coming systems; felt she could pursue the mission better outside."},
  {y:2025,t:"borderline",n:"Andrea Vallone",r:"Model policy safety research lead",d:"Nov 2025",w:"Led work on ChatGPT responses to users in distress; no public reason given for leaving."},
+ {y:2025,t:"borderline",n:"Tom Cunningham",r:"Economist, Economic Research team",d:"Sep 2025",w:"Farewell message said the team risked becoming a “de facto advocacy arm” for OpenAI and that research on AI's economic downsides was hard to publish. A research-integrity concern rather than model safety; OpenAI denies suppressing research. Joined METR."},
  {y:2026,t:"explicit",n:"Zoë Hitzig",r:"Researcher (models, pricing, safety policy)",d:"Feb 9, 2026",w:"Resigned the day ChatGPT ad testing began. NYT essay warned ads could push OpenAI toward manipulating users and repeating Facebook's mistakes."},
  {y:2026,t:"explicit",n:"Caitlin Kalinowski",r:"Head of Robotics & Consumer Hardware",d:"Mar 7, 2026",w:"Resigned over the Pentagon classified-network deal, saying domestic surveillance and lethal autonomy were “lines that deserved more deliberation than they got.”"},
  {y:2026,t:"borderline",n:"Joshua Achiam",r:"Chief Futurist, ex-Mission Alignment lead",d:"Jul 2026",w:"Left after his Mission Alignment team was disbanded in Feb 2026; cited no single trigger and said he'd pursue safe AI from outside a frontier lab."},
- {y:2026,t:"explicit",n:"David Robinson",r:"Safety transparency lead; drafted Preparedness Framework",d:"Late Sep–early Oct 2026",w:"Published an Atlantic essay arguing OpenAI's culture of speed and optimism is broken and that labs are not being careful enough."}
+ {y:2026,t:"explicit",n:"David Robinson",r:"Safety transparency lead; drafted Preparedness Framework",d:"Week of Sep 28, 2026 (essay Oct 3)",w:"Published an Atlantic essay arguing OpenAI's culture of speed and optimism is broken and that labs are not being careful enough."}
  ]},
  anthropic:{
   name:"Anthropic",founded:2021,
@@ -176,10 +177,10 @@ const DATA={
  xai:{
   name:"xAI",founded:2023,
   note:"xAI was founded in 2023. Reporting describes widespread safety discontent among staff, but no departing xAI employee has publicly given safety as the reason, so the count is thin.",
-  sources:"Main sources: The Verge via The Decoder on the founder exodus, Decrypt and MindStudio on the Devon Kim lawsuit, xAI and Babuschkin's own announcement (Aug 2025).",
+  sources:"Main sources: The Verge via The Decoder on the founder exodus, TechCrunch and Decrypt on the Devin Kim lawsuit, xAI and Babuschkin's own announcement (Aug 2025).",
   excluded:[
    ["Founder exodus (2025–26):","about half the co-founding team left by March 2026, including Tony Wu and Jimmy Ba (Feb 2026). Anonymous ex-staff told The Verge that \"there is zero safety whatsoever in the company,\" but no departing founder said so publicly. Musk called it a restructuring for speed."],
-   ["Fired, not resigned:","Devon Kim, an early employee, alleges in a June 2026 lawsuit that he was fired (≈ Sep 2025) after pushing for stronger Grok safeguards. These are claims, not findings."]
+   ["Fired, not resigned:","Devin Kim, an early employee, alleges in a June 2026 lawsuit that he was fired (≈ Sep 2025) after pushing for stronger Grok safeguards. These are claims, not findings."]
   ],
   rows:[
  {y:2025,t:"borderline",n:"Igor Babuschkin",r:"Co-founder, engineering lead",d:"Aug 2025",w:"Left to start a venture firm backing AI safety research. Framed it as a positive move, with no criticism of xAI."}
