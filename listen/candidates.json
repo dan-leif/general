@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20T18:39+00:00",
+  "generated": "2026-11-21T17:37+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,7 @@
       "words": 7346,
       "minutes": 46,
       "full_text_in_feed": true,
-      "score": 29.8,
+      "score": 29.3,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +38,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 24.3,
+      "score": 23.8,
       "matched": [
         "alignment",
         "agents",
@@ -59,7 +59,7 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 20.8,
+      "score": 20.3,
       "matched": [
         "agents",
         "claude",
@@ -79,7 +79,7 @@
       "words": 3717,
       "minutes": 23,
       "full_text_in_feed": true,
-      "score": 16.5,
+      "score": 16.1,
       "matched": [
         "ai safety",
         "alignment",
@@ -100,7 +100,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 15.0,
+      "score": 14.5,
       "matched": [
         "ai safety",
         "alignment",
@@ -121,7 +121,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 14.1,
+      "score": 13.6,
       "matched": [
         "agents",
         "claude",
@@ -141,7 +141,7 @@
       "words": 3976,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 12.4,
+      "score": 11.9,
       "matched": [
         "agents",
         "claude",
@@ -161,31 +161,11 @@
       "words": 739,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 10.0,
+      "score": 9.5,
       "matched": [
         "claude",
         "anthropic",
         "openai",
-        "open source"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
-      "title": "Open-source AI without Jensen",
-      "source": "Interconnects AI",
-      "author": "Nathan Lambert",
-      "published": "2026-11-14T12:23:15+00:00",
-      "summary": "A decapitation. It’s time to rebuild.",
-      "words": 1477,
-      "minutes": 9,
-      "full_text_in_feed": true,
-      "score": 9.9,
-      "matched": [
-        "ai safety",
-        "anthropic",
-        "openai",
-        "regulation",
         "open source"
       ],
       "done": false
@@ -200,7 +180,7 @@
       "words": 421,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 8.0,
+      "score": 7.5,
       "matched": [
         "anthropic"
       ],
@@ -216,7 +196,7 @@
       "words": 5678,
       "minutes": 35,
       "full_text_in_feed": true,
-      "score": 7.9,
+      "score": 7.4,
       "matched": [
         "agents",
         "claude",
@@ -233,10 +213,10 @@
       "author": "Grace Huckins",
       "published": "2026-11-20T18:15:15+00:00",
       "summary": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The…",
-      "words": 1342,
+      "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 6.0,
+      "score": 5.5,
       "matched": [
         "agents",
         "anthropic",
@@ -254,11 +234,28 @@
       "words": 531,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 4.2,
+      "score": 3.7,
       "matched": [
         "agents",
         "claude",
         "jobs"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "source": "AI - Ars Technica",
+      "author": "Dan Goodin",
+      "published": "2026-11-20T20:59:08+00:00",
+      "summary": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
+      "words": 285,
+      "minutes": 2,
+      "full_text_in_feed": false,
+      "score": 3.6,
+      "matched": [
+        "anthropic",
+        "openai"
       ],
       "done": false
     },
@@ -272,7 +269,7 @@
       "words": 1585,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 2.5,
+      "score": 2.0,
       "matched": [
         "claude"
       ],
@@ -288,7 +285,7 @@
       "words": 145,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 0.6,
+      "score": 0.1,
       "matched": [
         "agents"
       ],
@@ -304,24 +301,10 @@
       "words": 281,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 0.4,
+      "score": -0.1,
       "matched": [
         "agents"
       ],
-      "done": false
-    },
-    {
-      "url": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert",
-      "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
-      "source": "AI - Ars Technica",
-      "author": "Ashley Belanger",
-      "published": "2026-11-19T20:19:28+00:00",
-      "summary": "Lawsuit: Over 99% of school system’s AI gun alerts were false positives.",
-      "words": 135,
-      "minutes": 1,
-      "full_text_in_feed": false,
-      "score": -0.5,
-      "matched": [],
       "done": false
     },
     {
@@ -334,37 +317,7 @@
       "words": 1586,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": -1.2,
-      "matched": [],
-      "done": false
-    },
-    {
-      "url": "https://www.exponentialview.co/p/what-does-it-cost-to-make-a-worker",
-      "title": "🔮 What does it cost to make a worker?",
-      "source": "Exponential View",
-      "author": "Azeem Azhar",
-      "published": "2026-11-14T07:27:27+00:00",
-      "summary": "Some early sketches of the economics of manufactured intelligence",
-      "words": 253,
-      "minutes": 2,
-      "full_text_in_feed": false,
-      "score": -2.2,
-      "matched": [
-        "economics"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.astralcodexten.com/p/vote-in-the-2026-book-review-contest",
-      "title": "Vote In The 2026 Book Review Contest",
-      "source": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "published": "2026-11-14T00:23:27+00:00",
-      "summary": "...",
-      "words": 152,
-      "minutes": 1,
-      "full_text_in_feed": false,
-      "score": -3.4,
+      "score": -1.7,
       "matched": [],
       "done": false
     }
