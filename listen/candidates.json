@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21T17:37+00:00",
+  "generated": "2026-11-22T17:53+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,7 @@
       "words": 7346,
       "minutes": 46,
       "full_text_in_feed": true,
-      "score": 29.3,
+      "score": 28.8,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +38,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 23.8,
+      "score": 23.3,
       "matched": [
         "alignment",
         "agents",
@@ -59,7 +59,7 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 20.3,
+      "score": 19.8,
       "matched": [
         "agents",
         "claude",
@@ -79,7 +79,7 @@
       "words": 3717,
       "minutes": 23,
       "full_text_in_feed": true,
-      "score": 16.1,
+      "score": 15.6,
       "matched": [
         "ai safety",
         "alignment",
@@ -100,7 +100,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 14.5,
+      "score": 14.0,
       "matched": [
         "ai safety",
         "alignment",
@@ -108,6 +108,24 @@
         "openai",
         "ai policy",
         "economics"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.exponentialview.co/p/ev-611",
+      "title": "🔮 Certified human, twin primes, Anthropic++ #611",
+      "source": "Exponential View",
+      "author": "Azeem Azhar",
+      "published": "2026-11-22T04:59:51+00:00",
+      "summary": "Your Sunday briefing on AI and exponential technologies",
+      "words": 852,
+      "minutes": 5,
+      "full_text_in_feed": true,
+      "score": 13.7,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic"
       ],
       "done": false
     },
@@ -121,7 +139,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 13.6,
+      "score": 13.1,
       "matched": [
         "agents",
         "claude",
@@ -141,7 +159,7 @@
       "words": 3976,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 11.9,
+      "score": 11.4,
       "matched": [
         "agents",
         "claude",
@@ -161,7 +179,7 @@
       "words": 739,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 9.5,
+      "score": 9.0,
       "matched": [
         "claude",
         "anthropic",
@@ -180,7 +198,7 @@
       "words": 421,
       "minutes": 3,
       "full_text_in_feed": true,
-      "score": 7.5,
+      "score": 7.0,
       "matched": [
         "anthropic"
       ],
@@ -196,7 +214,7 @@
       "words": 5678,
       "minutes": 35,
       "full_text_in_feed": true,
-      "score": 7.4,
+      "score": 6.9,
       "matched": [
         "agents",
         "claude",
@@ -216,29 +234,11 @@
       "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 5.5,
+      "score": 5.0,
       "matched": [
         "agents",
         "anthropic",
         "openai"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.exponentialview.co/p/ev-610",
-      "title": "🔮 The $22 billion question about AI self-improvement #610",
-      "source": "Exponential View",
-      "author": "Azeem Azhar",
-      "published": "2026-11-15T04:47:29+00:00",
-      "summary": "Plus: Cheap solar, who pays for Claude & DNA immunotherapy++",
-      "words": 531,
-      "minutes": 3,
-      "full_text_in_feed": true,
-      "score": 3.7,
-      "matched": [
-        "agents",
-        "claude",
-        "jobs"
       ],
       "done": false
     },
@@ -249,13 +249,29 @@
       "author": "Dan Goodin",
       "published": "2026-11-20T20:59:08+00:00",
       "summary": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
-      "words": 285,
+      "words": 259,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 3.6,
+      "score": 3.1,
       "matched": [
         "anthropic",
         "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.astralcodexten.com/p/suggest-questions-for-the-2027-acxmetaculus",
+      "title": "Suggest Questions For The 2027 ACX/Metaculus Prediction Contest",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-21T19:00:45+00:00",
+      "summary": "...",
+      "words": 170,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": 1.5,
+      "matched": [
+        "agents"
       ],
       "done": false
     },
@@ -269,7 +285,7 @@
       "words": 1585,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 2.0,
+      "score": 1.5,
       "matched": [
         "claude"
       ],
@@ -285,7 +301,7 @@
       "words": 145,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 0.1,
+      "score": -0.4,
       "matched": [
         "agents"
       ],
@@ -301,7 +317,7 @@
       "words": 281,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": -0.1,
+      "score": -0.6,
       "matched": [
         "agents"
       ],
@@ -317,7 +333,7 @@
       "words": 1586,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": -1.7,
+      "score": -2.2,
       "matched": [],
       "done": false
     }
