@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T17:53+00:00",
+  "generated": "2026-11-23T22:05+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,7 @@
       "words": 7346,
       "minutes": 46,
       "full_text_in_feed": true,
-      "score": 28.8,
+      "score": 28.2,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +38,7 @@
       "words": 2190,
       "minutes": 14,
       "full_text_in_feed": true,
-      "score": 23.3,
+      "score": 22.7,
       "matched": [
         "alignment",
         "agents",
@@ -59,13 +59,34 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 19.8,
+      "score": 19.3,
       "matched": [
         "agents",
         "claude",
         "anthropic",
         "openai",
         "frontier model"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+      "title": "Management consulting is not a thin wrapper on intelligence",
+      "source": "AI as Normal Technology",
+      "author": "Sayash Kapoor",
+      "published": "2026-11-23T20:12:32+00:00",
+      "summary": "Consulting as a test case for AI's impact on knowledge work",
+      "words": 4937,
+      "minutes": 31,
+      "full_text_in_feed": true,
+      "score": 16.0,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "jobs",
+        "reasoning"
       ],
       "done": false
     },
@@ -79,7 +100,7 @@
       "words": 3717,
       "minutes": 23,
       "full_text_in_feed": true,
-      "score": 15.6,
+      "score": 15.0,
       "matched": [
         "ai safety",
         "alignment",
@@ -87,6 +108,26 @@
         "anthropic",
         "ai policy",
         "reasoning"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.understandingai.org/p/the-five-most-important-debates-in",
+      "title": "The five most important debates in AI right now",
+      "source": "Understanding AI",
+      "author": "Timothy B. Lee",
+      "published": "2026-11-23T19:31:14+00:00",
+      "summary": "The best arguments for — and against — an AI bubble, a cyber-apocalypse, and recursive self-improvement.",
+      "words": 1981,
+      "minutes": 12,
+      "full_text_in_feed": true,
+      "score": 14.9,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "jobs"
       ],
       "done": false
     },
@@ -100,7 +141,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 14.0,
+      "score": 13.4,
       "matched": [
         "ai safety",
         "alignment",
@@ -121,7 +162,7 @@
       "words": 852,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 13.7,
+      "score": 13.1,
       "matched": [
         "agents",
         "claude",
@@ -139,7 +180,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 13.1,
+      "score": 12.5,
       "matched": [
         "agents",
         "claude",
@@ -159,7 +200,7 @@
       "words": 3976,
       "minutes": 25,
       "full_text_in_feed": true,
-      "score": 11.4,
+      "score": 10.8,
       "matched": [
         "agents",
         "claude",
@@ -170,57 +211,35 @@
       "done": false
     },
     {
-      "url": "https://www.technologyreview.com/2026/11/16/1148624/the-open-source-movement-wants-jensen-huang-back",
-      "title": "The open-source movement wants Jensen Huang back",
+      "url": "https://www.technologyreview.com/2026/11/23/1149569/a-legendary-philosopher-isnt-buying-anthropics-consciousness-argument",
+      "title": "A legendary philosopher isn’t buying Anthropic’s consciousness argument",
       "source": "Artificial intelligence – MIT Technology Review",
       "author": "James O'Donnell",
-      "published": "2026-11-16T18:38:47+00:00",
-      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. On Friday, a petition to reinstate Jensen Huang as CEO of Nvidia began circulating on social media, and by Monday it…",
-      "words": 739,
-      "minutes": 5,
+      "published": "2026-11-23T17:36:08+00:00",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Before going public last week, Anthropic named the possibility that AI could be conscious or sentient as a risk factor…",
+      "words": 993,
+      "minutes": 6,
       "full_text_in_feed": true,
-      "score": 9.0,
+      "score": 9.9,
       "matched": [
-        "claude",
-        "anthropic",
-        "openai",
-        "open source"
+        "anthropic"
       ],
       "done": false
     },
     {
-      "url": "https://www.exponentialview.co/p/what-anthropic-is-really-listing",
-      "title": "🔮 What Anthropic is really listing",
-      "source": "Exponential View",
-      "author": "Azeem Azhar",
-      "published": "2026-11-16T16:36:16+00:00",
-      "summary": "Tithes, not tokens",
-      "words": 421,
-      "minutes": 3,
+      "url": "https://simonwillison.net/2026/Nov/23/ladybird",
+      "title": "Ladybird's first alpha release",
+      "source": "Simon Willison's Weblog: Entries",
+      "author": "",
+      "published": "2026-11-23T21:46:35+00:00",
+      "summary": "Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components - things like HarfBuzz…",
+      "words": 882,
+      "minutes": 6,
       "full_text_in_feed": true,
-      "score": 7.0,
-      "matched": [
-        "anthropic"
-      ],
-      "done": true
-    },
-    {
-      "url": "https://www.technologyreview.com/2026/11/16/1146070/building-ai-that-can-work-across-the-enterprise",
-      "title": "Building AI that can work across the enterprise",
-      "source": "Artificial intelligence – MIT Technology Review",
-      "author": "MIT Technology Review Insights",
-      "published": "2026-11-16T13:00:00+00:00",
-      "summary": "For years, enterprises have approached AI as a series of discrete experiments. Now, as AI agents begin to move into the workflows that run the business, that model is starting to look inadequate. Organizations moving from isolated pilots toward AI agents and…",
-      "words": 5678,
-      "minutes": 35,
-      "full_text_in_feed": true,
-      "score": 6.9,
+      "score": 8.0,
       "matched": [
         "agents",
-        "claude",
-        "anthropic",
-        "economics",
-        "reasoning"
+        "claude"
       ],
       "done": false
     },
@@ -234,11 +253,27 @@
       "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 5.0,
+      "score": 4.4,
       "matched": [
         "agents",
         "anthropic",
         "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://arstechnica.com/reviews/2026/11/review-the-asus-proart-p16-offers-a-glimpse-of-a-future-powered-by-local-ai",
+      "title": "Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI",
+      "source": "AI - Ars Technica",
+      "author": "Ryan Whitwam",
+      "published": "2026-11-23T12:00:00+00:00",
+      "summary": "The new Asus ProArt laptop costs up to $7,000, but it can run a gaggle of local AI agents.",
+      "words": 206,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": 3.8,
+      "matched": [
+        "agents"
       ],
       "done": false
     },
@@ -252,7 +287,7 @@
       "words": 259,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 3.1,
+      "score": 2.5,
       "matched": [
         "anthropic",
         "openai"
@@ -269,7 +304,7 @@
       "words": 170,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 1.5,
+      "score": 0.9,
       "matched": [
         "agents"
       ],
@@ -285,55 +320,51 @@
       "words": 1585,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 1.5,
+      "score": 0.9,
       "matched": [
         "claude"
       ],
       "done": false
     },
     {
-      "url": "https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote",
-      "title": "Copilot is \"the new OS for work,\" and now Office runs inside of it",
+      "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn",
+      "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
       "source": "AI - Ars Technica",
-      "author": "Nick Indge",
-      "published": "2026-11-18T00:27:29+00:00",
-      "summary": "Word, Excel, and PowerPoint now live inside Copilot; always-on agents are next.",
-      "words": 145,
+      "author": "Ashley Belanger",
+      "published": "2026-11-23T21:30:44+00:00",
+      "summary": "X says every Grok output is screened, but state AGs say Grok is still making CSAM.",
+      "words": 155,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -0.4,
-      "matched": [
-        "agents"
-      ],
+      "score": -0.0,
+      "matched": [],
       "done": false
     },
     {
-      "url": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it",
-      "title": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
-      "source": "AI - Ars Technica",
-      "author": "Dan Goodin",
-      "published": "2026-11-17T14:00:29+00:00",
-      "summary": "AI agent takes unapproved actions even when laptop lid is closed and told not to.",
-      "words": 281,
-      "minutes": 2,
+      "url": "https://www.exponentialview.co/p/monday-data-turbulence-is-getting-weirder",
+      "title": "📈 Monday data: Turbulence is getting weirder, and nobody knows why",
+      "source": "Exponential View",
+      "author": "Hannah Petrovic",
+      "published": "2026-11-23T13:25:46+00:00",
+      "summary": "El Niño and climate change don't fully explain it",
+      "words": 113,
+      "minutes": 1,
       "full_text_in_feed": false,
-      "score": -0.6,
-      "matched": [
-        "agents"
-      ],
+      "score": -0.2,
+      "matched": [],
       "done": false
     },
     {
-      "url": "https://www.astralcodexten.com/p/varieties-of-discourseposting",
-      "title": "Varieties Of Discourseposting",
-      "source": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "published": "2026-11-18T07:47:03+00:00",
-      "summary": "...",
-      "words": 1586,
-      "minutes": 10,
-      "full_text_in_feed": true,
-      "score": -2.2,
+      "url": "https://www.technologyreview.com/2026/11/18/1148650/ai-hype-index-ai-is-everywhere",
+      "title": "The AI Hype Index: AI is everywhere",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "Amit Katwala",
+      "published": "2026-11-18T14:42:44+00:00",
+      "summary": "Like a nasty rash, AI seems to spread everywhere. Google crams AI Overviews down your throat even though it costs the company billions of dollars in lost ad revenue. Leave your apartment, and you might pass two people heaving an AI-powered humanoid robot up…",
+      "words": 169,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": -2.7,
       "matched": [],
       "done": false
     }
