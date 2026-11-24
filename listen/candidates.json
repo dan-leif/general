@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T22:05+00:00",
+  "generated": "2026-11-24T20:41+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -8,16 +8,16 @@
   ],
   "items": [
     {
-      "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t",
-      "title": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
+      "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft",
+      "title": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
       "source": "Latent Space",
       "author": "swyx .ai",
-      "published": "2026-11-20T07:12:24+00:00",
-      "summary": "November 19, 2026 — ANT went from $83 at pricing to $111.50 at the open and $97.17 at the close. Plus, Google opens Genie 4 to developers.",
-      "words": 7346,
-      "minutes": 46,
+      "published": "2026-11-24T04:14:16+00:00",
+      "summary": "November 23, 2026 — Nvidia reinstates its founder, and OpenAI publishes its internal loss curve and proposes a shared training limit.",
+      "words": 6870,
+      "minutes": 43,
       "full_text_in_feed": true,
-      "score": 28.2,
+      "score": 30.7,
       "matched": [
         "alignment",
         "agents",
@@ -29,16 +29,16 @@
       "done": false
     },
     {
-      "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026",
-      "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
+      "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t",
+      "title": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
       "source": "Latent Space",
       "author": "swyx .ai",
-      "published": "2026-11-17T09:24:56+00:00",
-      "summary": "November 16, 2026 — Computer gets Teammates, Perplexity ships Monitor API, and a new research lab launches.",
-      "words": 2190,
-      "minutes": 14,
+      "published": "2026-11-20T07:12:24+00:00",
+      "summary": "November 19, 2026 — ANT went from $83 at pricing to $111.50 at the open and $97.17 at the close. Plus, Google opens Genie 4 to developers.",
+      "words": 7346,
+      "minutes": 46,
       "full_text_in_feed": true,
-      "score": 22.7,
+      "score": 27.7,
       "matched": [
         "alignment",
         "agents",
@@ -59,7 +59,7 @@
       "words": 1592,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 19.3,
+      "score": 18.8,
       "matched": [
         "agents",
         "claude",
@@ -79,34 +79,13 @@
       "words": 4937,
       "minutes": 31,
       "full_text_in_feed": true,
-      "score": 16.0,
+      "score": 15.5,
       "matched": [
         "agents",
         "claude",
         "anthropic",
         "openai",
         "jobs",
-        "reasoning"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.astralcodexten.com/p/the-ai-forecasting-agenda",
-      "title": "The AI Forecasting Agenda",
-      "source": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "published": "2026-11-19T20:29:45+00:00",
-      "summary": "...",
-      "words": 3717,
-      "minutes": 23,
-      "full_text_in_feed": true,
-      "score": 15.0,
-      "matched": [
-        "ai safety",
-        "alignment",
-        "claude",
-        "anthropic",
-        "ai policy",
         "reasoning"
       ],
       "done": false
@@ -121,13 +100,34 @@
       "words": 1981,
       "minutes": 12,
       "full_text_in_feed": true,
-      "score": 14.9,
+      "score": 14.5,
       "matched": [
         "agents",
         "claude",
         "anthropic",
         "openai",
         "jobs"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.astralcodexten.com/p/the-ai-forecasting-agenda",
+      "title": "The AI Forecasting Agenda",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-19T20:29:45+00:00",
+      "summary": "...",
+      "words": 3717,
+      "minutes": 23,
+      "full_text_in_feed": true,
+      "score": 14.5,
+      "matched": [
+        "ai safety",
+        "alignment",
+        "claude",
+        "anthropic",
+        "ai policy",
+        "reasoning"
       ],
       "done": false
     },
@@ -141,7 +141,7 @@
       "words": 2661,
       "minutes": 17,
       "full_text_in_feed": true,
-      "score": 13.4,
+      "score": 12.9,
       "matched": [
         "ai safety",
         "alignment",
@@ -162,7 +162,7 @@
       "words": 852,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 13.1,
+      "score": 12.7,
       "matched": [
         "agents",
         "claude",
@@ -180,7 +180,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 12.5,
+      "score": 12.0,
       "matched": [
         "agents",
         "claude",
@@ -191,22 +191,19 @@
       "done": false
     },
     {
-      "url": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts",
-      "title": "I spoke to seven physics experts grappling with the AI revolution",
-      "source": "Understanding AI",
-      "author": "Dan Kagan-Kans",
-      "published": "2026-11-17T14:51:56+00:00",
-      "summary": "AI can now do the calculations. What’s left for theoretical physicists?",
-      "words": 3976,
-      "minutes": 25,
-      "full_text_in_feed": true,
-      "score": 10.8,
+      "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input",
+      "title": "Amazon says hackers' AI agents found and exploited 0-day with little human input",
+      "source": "AI - Ars Technica",
+      "author": "Dan Goodin",
+      "published": "2026-11-24T12:30:05+00:00",
+      "summary": "The Cairn AI framework is proving to be a boon for defenders and attackers.",
+      "words": 140,
+      "minutes": 1,
+      "full_text_in_feed": false,
+      "score": 11.8,
       "matched": [
         "agents",
-        "claude",
-        "anthropic",
-        "openai",
-        "jobs"
+        "open source"
       ],
       "done": false
     },
@@ -220,7 +217,7 @@
       "words": 993,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 9.9,
+      "score": 9.4,
       "matched": [
         "anthropic"
       ],
@@ -236,7 +233,7 @@
       "words": 882,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 8.0,
+      "score": 7.5,
       "matched": [
         "agents",
         "claude"
@@ -253,7 +250,7 @@
       "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 4.4,
+      "score": 3.9,
       "matched": [
         "agents",
         "anthropic",
@@ -271,7 +268,7 @@
       "words": 206,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 3.8,
+      "score": 3.3,
       "matched": [
         "agents"
       ],
@@ -287,10 +284,26 @@
       "words": 259,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 2.5,
+      "score": 2.0,
       "matched": [
         "anthropic",
         "openai"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization",
+      "title": "Raising the stakes for enterprise networks with AI modernization",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "MIT Technology Review Insights",
+      "published": "2026-11-24T15:15:16+00:00",
+      "summary": "Enterprise networks are under severe strain. As companies rush to deploy artificial intelligence, the technology is quickly becoming the biggest source of demand on the network. Now, agentic AI is adding to the load. Tasks conducted by AI agents generate an…",
+      "words": 522,
+      "minutes": 3,
+      "full_text_in_feed": true,
+      "score": 1.9,
+      "matched": [
+        "agents"
       ],
       "done": false
     },
@@ -304,40 +317,10 @@
       "words": 170,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 0.9,
+      "score": 0.5,
       "matched": [
         "agents"
       ],
-      "done": false
-    },
-    {
-      "url": "https://simonwillison.net/2026/Nov/17/datasette-lite",
-      "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
-      "source": "Simon Willison's Weblog: Entries",
-      "author": "",
-      "published": "2026-11-17T16:48:33+00:00",
-      "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide . I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real…",
-      "words": 1585,
-      "minutes": 10,
-      "full_text_in_feed": true,
-      "score": 0.9,
-      "matched": [
-        "claude"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn",
-      "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
-      "source": "AI - Ars Technica",
-      "author": "Ashley Belanger",
-      "published": "2026-11-23T21:30:44+00:00",
-      "summary": "X says every Grok output is screened, but state AGs say Grok is still making CSAM.",
-      "words": 155,
-      "minutes": 1,
-      "full_text_in_feed": false,
-      "score": -0.0,
-      "matched": [],
       "done": false
     },
     {
@@ -350,21 +333,21 @@
       "words": 113,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -0.2,
+      "score": -0.7,
       "matched": [],
       "done": false
     },
     {
-      "url": "https://www.technologyreview.com/2026/11/18/1148650/ai-hype-index-ai-is-everywhere",
-      "title": "The AI Hype Index: AI is everywhere",
-      "source": "Artificial intelligence – MIT Technology Review",
-      "author": "Amit Katwala",
-      "published": "2026-11-18T14:42:44+00:00",
-      "summary": "Like a nasty rash, AI seems to spread everywhere. Google crams AI Overviews down your throat even though it costs the company billions of dollars in lost ad revenue. Leave your apartment, and you might pass two people heaving an AI-powered humanoid robot up…",
-      "words": 169,
-      "minutes": 1,
-      "full_text_in_feed": false,
-      "score": -2.7,
+      "url": "https://www.astralcodexten.com/p/varieties-of-discourseposting",
+      "title": "Varieties Of Discourseposting",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-18T07:47:03+00:00",
+      "summary": "...",
+      "words": 1586,
+      "minutes": 10,
+      "full_text_in_feed": true,
+      "score": -3.3,
       "matched": [],
       "done": false
     }
