@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T20:41+00:00",
+  "generated": "2026-11-25T19:58+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,7 @@
       "words": 6870,
       "minutes": 43,
       "full_text_in_feed": true,
-      "score": 30.7,
+      "score": 30.2,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +38,7 @@
       "words": 7346,
       "minutes": 46,
       "full_text_in_feed": true,
-      "score": 27.7,
+      "score": 27.2,
       "matched": [
         "alignment",
         "agents",
@@ -50,22 +50,62 @@
       "done": false
     },
     {
-      "url": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol",
-      "title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+      "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab",
+      "title": "[AINews] Gemini 4 Neon marks GDM's full return as a Frontier Lab",
       "source": "Latent Space",
       "author": "swyx .ai",
-      "published": "2026-11-18T10:19:04+00:00",
-      "summary": "November 17, 2026 — GPT-6.2 Astra and Sol lower benchmark costs. Early testers disagree on what Astra is like to work with.",
-      "words": 1592,
-      "minutes": 10,
+      "published": "2026-11-25T04:29:07+00:00",
+      "summary": "November 24, 2026 — Neon beats Astra and Fable on LiveBench and cuts Theo’s TS Rust benchmark runtime by 48.6%.",
+      "words": 6017,
+      "minutes": 38,
       "full_text_in_feed": true,
-      "score": 18.8,
+      "score": 25.7,
+      "matched": [
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "frontier model",
+        "regulation"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://simonwillison.net/2026/Nov/24/llm-inflection-points",
+      "title": "Three LLM inflection points in twelve months",
+      "source": "Simon Willison's Weblog: Entries",
+      "author": "",
+      "published": "2026-11-24T23:02:07+00:00",
+      "summary": "I gave a keynote at the AI Engineer Code Summit a couple of weeks ago, constructed around the idea that there have been three significant inflection points in the abilities of LLMs and coding agents in the past twelve months. Here's the video of the talk. In…",
+      "words": 1331,
+      "minutes": 8,
+      "full_text_in_feed": true,
+      "score": 15.6,
       "matched": [
         "agents",
         "claude",
         "anthropic",
         "openai",
         "frontier model"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.understandingai.org/p/an-anthropic-mathematician-just-solved",
+      "title": "An Anthropic mathematician just solved math’s most famous problem",
+      "source": "Understanding AI",
+      "author": "Kai Williams",
+      "published": "2026-11-24T21:43:33+00:00",
+      "summary": "Is solving the Riemann Hypothesis a “coal mine canary for dangerously advanced AI?”",
+      "words": 1040,
+      "minutes": 6,
+      "full_text_in_feed": true,
+      "score": 15.5,
+      "matched": [
+        "ai safety",
+        "claude",
+        "anthropic",
+        "openai"
       ],
       "done": false
     },
@@ -79,7 +119,7 @@
       "words": 4937,
       "minutes": 31,
       "full_text_in_feed": true,
-      "score": 15.5,
+      "score": 15.0,
       "matched": [
         "agents",
         "claude",
@@ -100,7 +140,7 @@
       "words": 1981,
       "minutes": 12,
       "full_text_in_feed": true,
-      "score": 14.5,
+      "score": 14.0,
       "matched": [
         "agents",
         "claude",
@@ -120,7 +160,7 @@
       "words": 3717,
       "minutes": 23,
       "full_text_in_feed": true,
-      "score": 14.5,
+      "score": 14.0,
       "matched": [
         "ai safety",
         "alignment",
@@ -128,27 +168,6 @@
         "anthropic",
         "ai policy",
         "reasoning"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.hyperdimensional.co/p/the-silent-consensus",
-      "title": "The Silent Consensus",
-      "source": "Hyperdimensional",
-      "author": "Dean W. Ball",
-      "published": "2026-11-18T18:02:06+00:00",
-      "summary": "Against Forfeiture",
-      "words": 2661,
-      "minutes": 17,
-      "full_text_in_feed": true,
-      "score": 12.9,
-      "matched": [
-        "ai safety",
-        "alignment",
-        "agents",
-        "openai",
-        "ai policy",
-        "economics"
       ],
       "done": false
     },
@@ -162,7 +181,7 @@
       "words": 852,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 12.7,
+      "score": 12.2,
       "matched": [
         "agents",
         "claude",
@@ -180,7 +199,7 @@
       "words": 1646,
       "minutes": 10,
       "full_text_in_feed": true,
-      "score": 12.0,
+      "score": 11.5,
       "matched": [
         "agents",
         "claude",
@@ -200,7 +219,7 @@
       "words": 140,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 11.8,
+      "score": 11.3,
       "matched": [
         "agents",
         "open source"
@@ -217,7 +236,7 @@
       "words": 993,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 9.4,
+      "score": 9.0,
       "matched": [
         "anthropic"
       ],
@@ -233,7 +252,24 @@
       "words": 882,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 7.5,
+      "score": 7.0,
+      "matched": [
+        "agents",
+        "claude"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems",
+      "title": "AI is straining America’s open records systems",
+      "source": "Artificial intelligence – MIT Technology Review",
+      "author": "Matthew King",
+      "published": "2026-11-25T10:00:00+00:00",
+      "summary": "In Panton, Vermont, population 660, town clerk Kyle Rowe did it all. He crafted budgets, paid vendors, handled property tax disputes, and served as the town’s zoning supervisor and presiding elections officer. During morning office hours at the town hall—a…",
+      "words": 2082,
+      "minutes": 13,
+      "full_text_in_feed": true,
+      "score": 3.8,
       "matched": [
         "agents",
         "claude"
@@ -250,7 +286,7 @@
       "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 3.9,
+      "score": 3.5,
       "matched": [
         "agents",
         "anthropic",
@@ -268,7 +304,7 @@
       "words": 206,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 3.3,
+      "score": 2.8,
       "matched": [
         "agents"
       ],
@@ -284,26 +320,10 @@
       "words": 259,
       "minutes": 2,
       "full_text_in_feed": false,
-      "score": 2.0,
+      "score": 1.5,
       "matched": [
         "anthropic",
         "openai"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization",
-      "title": "Raising the stakes for enterprise networks with AI modernization",
-      "source": "Artificial intelligence – MIT Technology Review",
-      "author": "MIT Technology Review Insights",
-      "published": "2026-11-24T15:15:16+00:00",
-      "summary": "Enterprise networks are under severe strain. As companies rush to deploy artificial intelligence, the technology is quickly becoming the biggest source of demand on the network. Now, agentic AI is adding to the load. Tasks conducted by AI agents generate an…",
-      "words": 522,
-      "minutes": 3,
-      "full_text_in_feed": true,
-      "score": 1.9,
-      "matched": [
-        "agents"
       ],
       "done": false
     },
@@ -317,7 +337,7 @@
       "words": 170,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 0.5,
+      "score": -0.0,
       "matched": [
         "agents"
       ],
@@ -333,21 +353,7 @@
       "words": 113,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -0.7,
-      "matched": [],
-      "done": false
-    },
-    {
-      "url": "https://www.astralcodexten.com/p/varieties-of-discourseposting",
-      "title": "Varieties Of Discourseposting",
-      "source": "Astral Codex Ten",
-      "author": "Scott Alexander",
-      "published": "2026-11-18T07:47:03+00:00",
-      "summary": "...",
-      "words": 1586,
-      "minutes": 10,
-      "full_text_in_feed": true,
-      "score": -3.3,
+      "score": -1.1,
       "matched": [],
       "done": false
     }
