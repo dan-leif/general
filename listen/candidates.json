@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T19:58+00:00",
+  "generated": "2026-11-26T19:42+00:00",
   "feeds_checked": 14,
   "errors": [
     "https://importai.substack.com/feed: HTTP Error 403: Forbidden",
@@ -17,7 +17,28 @@
       "words": 6870,
       "minutes": 43,
       "full_text_in_feed": true,
-      "score": 30.2,
+      "score": 29.7,
+      "matched": [
+        "alignment",
+        "agents",
+        "claude",
+        "anthropic",
+        "openai",
+        "frontier model"
+      ],
+      "done": false
+    },
+    {
+      "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them",
+      "title": "[AINews] Math Proofs Are Landing Faster Than We Can Read Them",
+      "source": "Latent Space",
+      "author": "swyx .ai",
+      "published": "2026-11-25T22:23:41+00:00",
+      "summary": "November 25, 2026 — From Erdős problems to new bounds for matrix multiplication and Fourier transforms.",
+      "words": 5186,
+      "minutes": 32,
+      "full_text_in_feed": true,
+      "score": 28.6,
       "matched": [
         "alignment",
         "agents",
@@ -38,7 +59,7 @@
       "words": 7346,
       "minutes": 46,
       "full_text_in_feed": true,
-      "score": 27.2,
+      "score": 26.7,
       "matched": [
         "alignment",
         "agents",
@@ -50,23 +71,22 @@
       "done": false
     },
     {
-      "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab",
-      "title": "[AINews] Gemini 4 Neon marks GDM's full return as a Frontier Lab",
-      "source": "Latent Space",
-      "author": "swyx .ai",
-      "published": "2026-11-25T04:29:07+00:00",
-      "summary": "November 24, 2026 — Neon beats Astra and Fable on LiveBench and cuts Theo’s TS Rust benchmark runtime by 48.6%.",
-      "words": 6017,
-      "minutes": 38,
+      "url": "https://www.astralcodexten.com/p/anima-bicameral",
+      "title": "Anima, Bicameral",
+      "source": "Astral Codex Ten",
+      "author": "Scott Alexander",
+      "published": "2026-11-25T21:20:38+00:00",
+      "summary": "...",
+      "words": 3171,
+      "minutes": 20,
       "full_text_in_feed": true,
-      "score": 25.7,
+      "score": 20.5,
       "matched": [
-        "agents",
+        "ai safety",
+        "alignment",
         "claude",
         "anthropic",
-        "openai",
-        "frontier model",
-        "regulation"
+        "reasoning"
       ],
       "done": false
     },
@@ -80,7 +100,7 @@
       "words": 1331,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 15.6,
+      "score": 15.1,
       "matched": [
         "agents",
         "claude",
@@ -100,7 +120,7 @@
       "words": 1040,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 15.5,
+      "score": 15.0,
       "matched": [
         "ai safety",
         "claude",
@@ -119,7 +139,7 @@
       "words": 4937,
       "minutes": 31,
       "full_text_in_feed": true,
-      "score": 15.0,
+      "score": 14.5,
       "matched": [
         "agents",
         "claude",
@@ -140,7 +160,7 @@
       "words": 1981,
       "minutes": 12,
       "full_text_in_feed": true,
-      "score": 14.0,
+      "score": 13.5,
       "matched": [
         "agents",
         "claude",
@@ -160,7 +180,7 @@
       "words": 3717,
       "minutes": 23,
       "full_text_in_feed": true,
-      "score": 14.0,
+      "score": 13.5,
       "matched": [
         "ai safety",
         "alignment",
@@ -181,31 +201,11 @@
       "words": 852,
       "minutes": 5,
       "full_text_in_feed": true,
-      "score": 12.2,
+      "score": 11.7,
       "matched": [
         "agents",
         "claude",
         "anthropic"
-      ],
-      "done": false
-    },
-    {
-      "url": "https://www.understandingai.org/p/19-charts-that-explain-the-state",
-      "title": "19 charts that explain the state of AI",
-      "source": "Understanding AI",
-      "author": "Kai Williams",
-      "published": "2026-11-18T21:34:00+00:00",
-      "summary": "The AI boom is getting a little crazy.",
-      "words": 1646,
-      "minutes": 10,
-      "full_text_in_feed": true,
-      "score": 11.5,
-      "matched": [
-        "agents",
-        "claude",
-        "anthropic",
-        "openai",
-        "regulation"
       ],
       "done": false
     },
@@ -219,7 +219,7 @@
       "words": 140,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 11.3,
+      "score": 10.8,
       "matched": [
         "agents",
         "open source"
@@ -236,7 +236,7 @@
       "words": 993,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 9.0,
+      "score": 8.5,
       "matched": [
         "anthropic"
       ],
@@ -252,7 +252,7 @@
       "words": 882,
       "minutes": 6,
       "full_text_in_feed": true,
-      "score": 7.0,
+      "score": 6.5,
       "matched": [
         "agents",
         "claude"
@@ -269,7 +269,7 @@
       "words": 2082,
       "minutes": 13,
       "full_text_in_feed": true,
-      "score": 3.8,
+      "score": 3.3,
       "matched": [
         "agents",
         "claude"
@@ -286,7 +286,7 @@
       "words": 1334,
       "minutes": 8,
       "full_text_in_feed": true,
-      "score": 3.5,
+      "score": 3.0,
       "matched": [
         "agents",
         "anthropic",
@@ -304,26 +304,25 @@
       "words": 206,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": 2.8,
+      "score": 2.3,
       "matched": [
         "agents"
       ],
       "done": false
     },
     {
-      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
-      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "url": "https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9",
+      "title": "Tidal announces ban on AI-generated music; 27 million tracks will be deleted",
       "source": "AI - Ars Technica",
-      "author": "Dan Goodin",
-      "published": "2026-11-20T20:59:08+00:00",
-      "summary": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
-      "words": 259,
-      "minutes": 2,
+      "author": "Ryan Whitwam",
+      "published": "2026-11-24T17:34:34+00:00",
+      "summary": "AI songs account for 6.3 percent of Tidal's catalog, but it's about to be zero.",
+      "words": 226,
+      "minutes": 1,
       "full_text_in_feed": false,
-      "score": 1.5,
+      "score": 1.0,
       "matched": [
-        "anthropic",
-        "openai"
+        "ai policy"
       ],
       "done": false
     },
@@ -337,7 +336,7 @@
       "words": 170,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -0.0,
+      "score": -0.5,
       "matched": [
         "agents"
       ],
@@ -353,7 +352,7 @@
       "words": 113,
       "minutes": 1,
       "full_text_in_feed": false,
-      "score": -1.1,
+      "score": -1.6,
       "matched": [],
       "done": false
     }
